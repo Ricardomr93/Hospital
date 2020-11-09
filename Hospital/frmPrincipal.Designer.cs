@@ -79,7 +79,7 @@
             this.pnlfecha = new System.Windows.Forms.Panel();
             this.lblFecha = new System.Windows.Forms.Label();
             this.pnlCitasMed = new System.Windows.Forms.Panel();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.dgvCitas = new System.Windows.Forms.DataGridView();
             this.btnActMedCita = new System.Windows.Forms.Button();
             this.lblNoIDMedCita = new System.Windows.Forms.Label();
             this.lblIDMedCita = new System.Windows.Forms.Label();
@@ -91,6 +91,7 @@
             this.lblCitas = new System.Windows.Forms.Label();
             this.btnPacMedDia = new System.Windows.Forms.Button();
             this.btnHisto = new System.Windows.Forms.Button();
+            this.hospitalDs = new Hospital.hospitalDs();
             this.pnlDatos.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pcbDatos)).BeginInit();
             this.pnlAtencion.SuspendLayout();
@@ -101,8 +102,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.pcbPac)).BeginInit();
             this.pnlfecha.SuspendLayout();
             this.pnlCitasMed.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvCitas)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pcbCita)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.hospitalDs)).BeginInit();
             this.SuspendLayout();
             // 
             // pnlDatos
@@ -655,7 +657,7 @@
             // pnlCitasMed
             // 
             this.pnlCitasMed.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(119)))), ((int)(((byte)(189)))));
-            this.pnlCitasMed.Controls.Add(this.dataGridView1);
+            this.pnlCitasMed.Controls.Add(this.dgvCitas);
             this.pnlCitasMed.Controls.Add(this.btnActMedCita);
             this.pnlCitasMed.Controls.Add(this.lblNoIDMedCita);
             this.pnlCitasMed.Controls.Add(this.lblIDMedCita);
@@ -670,24 +672,24 @@
             this.pnlCitasMed.Size = new System.Drawing.Size(560, 314);
             this.pnlCitasMed.TabIndex = 4;
             // 
-            // dataGridView1
+            // dgvCitas
             // 
-            this.dataGridView1.AllowUserToAddRows = false;
-            this.dataGridView1.AllowUserToDeleteRows = false;
-            this.dataGridView1.AllowUserToOrderColumns = true;
-            this.dataGridView1.AllowUserToResizeColumns = false;
-            this.dataGridView1.AllowUserToResizeRows = false;
-            this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dataGridView1.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(20, 133);
-            this.dataGridView1.MultiSelect = false;
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.ReadOnly = true;
-            this.dataGridView1.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridView1.Size = new System.Drawing.Size(530, 165);
-            this.dataGridView1.TabIndex = 30;
+            this.dgvCitas.AllowUserToAddRows = false;
+            this.dgvCitas.AllowUserToDeleteRows = false;
+            this.dgvCitas.AllowUserToOrderColumns = true;
+            this.dgvCitas.AllowUserToResizeColumns = false;
+            this.dgvCitas.AllowUserToResizeRows = false;
+            this.dgvCitas.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgvCitas.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
+            this.dgvCitas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvCitas.Location = new System.Drawing.Point(20, 133);
+            this.dgvCitas.MultiSelect = false;
+            this.dgvCitas.Name = "dgvCitas";
+            this.dgvCitas.ReadOnly = true;
+            this.dgvCitas.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.dgvCitas.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvCitas.Size = new System.Drawing.Size(530, 165);
+            this.dgvCitas.TabIndex = 30;
             // 
             // btnActMedCita
             // 
@@ -814,6 +816,11 @@
             this.btnHisto.Text = "Historial Clínico";
             this.btnHisto.UseVisualStyleBackColor = false;
             // 
+            // hospitalDs
+            // 
+            this.hospitalDs.DataSetName = "hospitalDs";
+            this.hospitalDs.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
             // frmPrincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -846,8 +853,9 @@
             this.pnlfecha.PerformLayout();
             this.pnlCitasMed.ResumeLayout(false);
             this.pnlCitasMed.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvCitas)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pcbCita)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.hospitalDs)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -907,7 +915,7 @@
         private System.Windows.Forms.Label lblAlerPac;
         private System.Windows.Forms.TextBox txtAlerPac;
         private System.Windows.Forms.Label lblADesPac;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView dgvCitas;
         private System.Windows.Forms.Button btnActMedCita;
         private System.Windows.Forms.Label lblNoIDMedCita;
         private System.Windows.Forms.Label lblIDMedCita;
@@ -917,6 +925,7 @@
         private System.Windows.Forms.PictureBox pcbCita;
         private System.Windows.Forms.Label lblMedCita;
         private System.Windows.Forms.Label lblCitas;
+        private hospitalDs hospitalDs;
     }
 }
 
