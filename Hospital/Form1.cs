@@ -10,11 +10,19 @@ using System.Windows.Forms;
 
 namespace Hospital
 {
-    public partial class Form1 : Form
+    public partial class frmMed : Form
     {
-        public Form1()
+        public frmMed()
         {
             InitializeComponent();
+        }
+
+        private void medicosBindingNavigatorSaveItem_Click(object sender, EventArgs e)
+        {
+            this.Validate();
+            this.medicosBindingSource.EndEdit();
+            this.tableAdapterManager.UpdateAll(this.hospitalDs);
+
         }
     }
 }
