@@ -21,15 +21,23 @@ namespace Hospital
         {
             try
             {
-                this.Validate();
-                this.pacientesBindingSource.EndEdit();
-                this.tableAdapterManager.UpdateAll(this.hospitalDs);
-                bindingNavigatorAddNewItem.Enabled = true;//habilita el boton de nuevo registro
-                DialogResult r = MessageBox.Show("Guardado con éxito \nDesea continuar?", "Guardado", MessageBoxButtons.YesNo, MessageBoxIcon.Information);
-                if (r == DialogResult.No)
+                if (is_valide())
                 {
-                    this.Close();
+                    this.Validate();
+                    this.pacientesBindingSource.EndEdit();
+                    this.tableAdapterManager.UpdateAll(this.hospitalDs);
+                    bindingNavigatorAddNewItem.Enabled = true;//habilita el boton de nuevo registro
+                    DialogResult r = MessageBox.Show("Guardado con éxito \nDesea continuar?", "Guardado", MessageBoxButtons.YesNo, MessageBoxIcon.Information);
+                    if (r == DialogResult.No)
+                    {
+                        this.Close();
+                    }
                 }
+                else
+                {
+                    MessageBox.Show("No se ha podido guardar, campos obligatorios vacios", "Atencion", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+                
             }
             catch (NoNullAllowedException ex)
             {
@@ -44,6 +52,27 @@ namespace Hospital
                 MessageBox.Show("No se ha podido guardar, " + exp.Message, "Atencion", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
 
+        }
+        private bool is_valide()
+        {
+            bool valid = true;
+            int e = errorTxt(txtNomPac) + errorTxt(txtApellPac) + errorTxt(txtLocPac);
+            if (e > 0)
+            {
+                valid = false;
+            }
+            return valid;
+
+        }
+
+        private int errorTxt(TextBox t)
+        {
+            int e = 0;
+            if (t.Text.Equals("") || t == null)
+            {
+                e++;
+            }
+            return e;
         }
 
         private void frmPac_Load(object sender, EventArgs e)
