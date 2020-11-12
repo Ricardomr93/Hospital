@@ -17,7 +17,9 @@ namespace Hospital
 {
     public partial class frmPrincipal : Form
     {
-        ArrayList id = new ArrayList();
+        ArrayList idMed = new ArrayList();
+        ArrayList idPac = new ArrayList();
+        ArrayList idMedC = new ArrayList();
         private byte[] MyData;
         public frmPrincipal()
         {
@@ -34,7 +36,8 @@ namespace Hospital
             rljHora.Start();
             cargarcmbbMedicos();
             // dgvCitas.DataSource = hospitalDs.atenmedpac;
-            cargarcmmbNomMedEspe();
+            cargarcmbbNomMedEspe();
+            cargarcmbbEspe();
 
 
         }
@@ -51,15 +54,17 @@ namespace Hospital
         private void cargarcmbbMedicos()
         {
             cmbbNomAten.Items.Clear();
+            idMedC.Clear();
             try
             {
                 medicosTableAdapter.Fill(hospitalDs.medicos);
                 for (int i = 0; i < hospitalDs.medicos.Count; i++)
                 {
                     cmbbMedCita.Items.Add(hospitalDs.medicos[i].nombre);
+                    idMedC.Add(hospitalDs.medicos[i].idmedico);
                 }
             }
-            catch (ConstraintException ce)
+            catch (ConstraintException)
             {
                 cmbbNomAten.Text = "";
             }
@@ -67,22 +72,33 @@ namespace Hospital
         private void cargarcmbbPacientes()
         {
             cmbbPacAten.Items.Clear();
+            idPac.Clear();
             pacientesTableAdapter.Fill(hospitalDs.pacientes);
             for (int i = 0; i < hospitalDs.pacientes.Count; i++)
             {
                 cmbbPacAten.Items.Add(hospitalDs.pacientes[i].nombre);
+                idPac.Add(hospitalDs.pacientes[i].idpaciente);
             }
         }
 
-        private void cargarcmmbNomMedEspe()
+        private void cargarcmbbNomMedEspe()
         {
             cmbbNomAten.Items.Clear();
-            id.Clear();
+            idMed.Clear();
             medicosTableAdapter.FillByEspecialidad(hospitalDs.medicos, cmbbEspeAten.Text);
             for (int i = 0; i < hospitalDs.medicos.Count; i++)
             {
                 cmbbNomAten.Items.Add(hospitalDs.medicos[i].nombre);
-                id.Add(hospitalDs.medicos[i].idmedico);
+                idMed.Add(hospitalDs.medicos[i].idmedico);
+            }
+        }
+        private void cargarcmbbEspe()
+        {
+            cmbbEspeAten.Items.Clear();
+            especialidadesTableAdapter.Fill(hospitalDs.especialidades);
+            for (int i = 0; i < hospitalDs.especialidades.Count; i++)
+            {
+                cmbbEspeAten.Items.Add(hospitalDs.especialidades[i].especialidad);
             }
         }
 
@@ -90,7 +106,7 @@ namespace Hospital
         private void cargarMedicos()
         {
             hospitalDs.medicos.Clear();
-            medicosTableAdapter.FillByIDMed(hospitalDs.medicos, int.Parse(id[cmbbNomAten.SelectedIndex].ToString()));
+            medicosTableAdapter.FillByIDMed(hospitalDs.medicos, int.Parse(idMed[cmbbNomAten.SelectedIndex].ToString()));
             if (hospitalDs.medicos.Count > 0)
             {
                 lblNoIDMed.Text = hospitalDs.medicos[0].idmedico.ToString();
@@ -104,10 +120,10 @@ namespace Hospital
         private void cargarPacientes()
         {
             hospitalDs.pacientes.Clear();
-            pacientesTableAdapter.FillByNomPac(hospitalDs.pacientes, cmbbPacAten.Text);
+            pacientesTableAdapter.FillByIDPac(hospitalDs.pacientes, int.Parse(idPac[cmbbPacAten.SelectedIndex].ToString()));
             if (hospitalDs.medicos.Count > 0)
             {
-                txtIDPac.Text = hospitalDs.pacientes[0].idpaciente.ToString();
+                lblNoIDPac.Text = hospitalDs.pacientes[0].idpaciente.ToString();
                 txtNomPac.Text = hospitalDs.pacientes[0].nombre;
                 txtApellPac.Text = hospitalDs.pacientes[0].apellidos;
                 txtAlerPac.Text = hospitalDs.pacientes[0].alergias;
@@ -117,17 +133,19 @@ namespace Hospital
         }
         private void cmbbEspeAten_SelectedValueChanged(object sender, EventArgs e)
         {
-            cargarcmmbNomMedEspe();
+            cargarcmbbNomMedEspe();
         }
 
         private void cmbbNomAten_SelectedValueChanged(object sender, EventArgs e)
         {
+            //cargamos los campos de la izquierda de medico
             cargarMedicos();
+            //cambiamos el elemento del combobox de citas con el del de atencion
             if (cmbbNomAten.SelectedIndex >= 0)
             {
                 cmbbMedCita.SelectedItem = cmbbNomAten.SelectedItem;
             }
-
+            //cargamos el combo de pacientes
             cargarcmbbPacientes();
         }
         private void cmbbPacAten_SelectedValueChanged(object sender, EventArgs e)
@@ -136,12 +154,11 @@ namespace Hospital
         }
         private void cmbbMedCita_SelectedValueChanged(object sender, EventArgs e)
         {
-            this.atenmedpacTableAdapter.FillByNomMed(this.hospitalDs.atenmedpac, cmbbMedCita.Text);
-            this.medicosTableAdapter.FillByNombreMed(this.hospitalDs.medicos, cmbbMedCita.Text);
+            int idm = int.Parse(idMedC[cmbbMedCita.SelectedIndex].ToString());
+            medicosTableAdapter.FillByIDMed(hospitalDs.medicos, idm);
             lblNomEspeCita.Text = hospitalDs.medicos[0].especialidad;
             lblNoIDMedCita.Text = hospitalDs.medicos[0].idmedico.ToString();
-
-            // lblNomEspeCita.Text = hospitalDs.atencsmedicas[0].especialidad;
+            this.atenmedpacTableAdapter.FillByIDMed(this.hospitalDs.atenmedpac,idm);
         }
         private void btnGesMed_Click(object sender, EventArgs e)
         {
@@ -190,6 +207,32 @@ namespace Hospital
             catch (NoNullAllowedException)
             {
             }
+        }
+
+        private void btnAnCita_Click(object sender, EventArgs e)
+        {
+            DateTime d = dtpFechaAten.Value;
+            try
+            {
+                int pac = int.Parse(idPac[cmbbPacAten.SelectedIndex].ToString());
+                int med = int.Parse(idMed[cmbbNomAten.SelectedIndex].ToString());
+
+                // this.atencsmedicasTableAdapter.Insert(d, med, pac, "");
+                atenmedpacTableAdapter.FillByIDMed(hospitalDs.atenmedpac, med);
+                MessageBox.Show("Cita ha sido añádida", "Correcto", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                resetAtenMed();
+            }
+            catch (ArgumentOutOfRangeException)
+            {
+                MessageBox.Show("Rellene todos los campos", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            
+        }
+        private void resetAtenMed()
+        {
+            cmbbNomAten.Items.Clear();
+            cmbbPacAten.Items.Clear();
+            cargarcmbbEspe();
         }
     }
 }

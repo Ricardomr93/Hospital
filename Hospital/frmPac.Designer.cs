@@ -225,7 +225,7 @@
             // 
             lblIDPac.AutoSize = true;
             lblIDPac.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Bold);
-            lblIDPac.Location = new System.Drawing.Point(64, 37);
+            lblIDPac.Location = new System.Drawing.Point(50, 36);
             lblIDPac.Name = "lblIDPac";
             lblIDPac.Size = new System.Drawing.Size(78, 18);
             lblIDPac.TabIndex = 1;
@@ -235,7 +235,7 @@
             // 
             this.lblNoIDPac.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.pacientesBindingSource, "idpaciente", true));
             this.lblNoIDPac.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Bold);
-            this.lblNoIDPac.Location = new System.Drawing.Point(158, 37);
+            this.lblNoIDPac.Location = new System.Drawing.Point(144, 36);
             this.lblNoIDPac.Name = "lblNoIDPac";
             this.lblNoIDPac.Size = new System.Drawing.Size(100, 23);
             this.lblNoIDPac.TabIndex = 2;
@@ -245,7 +245,7 @@
             // 
             lblNomPac.AutoSize = true;
             lblNomPac.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Bold);
-            lblNomPac.Location = new System.Drawing.Point(64, 93);
+            lblNomPac.Location = new System.Drawing.Point(50, 92);
             lblNomPac.Name = "lblNomPac";
             lblNomPac.Size = new System.Drawing.Size(61, 18);
             lblNomPac.TabIndex = 3;
@@ -256,7 +256,7 @@
             this.txtNomPac.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(179)))), ((int)(((byte)(229)))), ((int)(((byte)(252)))));
             this.txtNomPac.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.pacientesBindingSource, "nombre", true));
             this.txtNomPac.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Bold);
-            this.txtNomPac.Location = new System.Drawing.Point(161, 63);
+            this.txtNomPac.Location = new System.Drawing.Point(147, 62);
             this.txtNomPac.Name = "txtNomPac";
             this.txtNomPac.Size = new System.Drawing.Size(189, 23);
             this.txtNomPac.TabIndex = 4;
@@ -265,7 +265,7 @@
             // 
             lblApellPac.AutoSize = true;
             lblApellPac.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Bold);
-            lblApellPac.Location = new System.Drawing.Point(64, 64);
+            lblApellPac.Location = new System.Drawing.Point(50, 63);
             lblApellPac.Name = "lblApellPac";
             lblApellPac.Size = new System.Drawing.Size(69, 18);
             lblApellPac.TabIndex = 5;
@@ -276,7 +276,7 @@
             this.txtApellPac.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(179)))), ((int)(((byte)(229)))), ((int)(((byte)(252)))));
             this.txtApellPac.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.pacientesBindingSource, "apellidos", true));
             this.txtApellPac.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Bold);
-            this.txtApellPac.Location = new System.Drawing.Point(161, 92);
+            this.txtApellPac.Location = new System.Drawing.Point(147, 91);
             this.txtApellPac.Name = "txtApellPac";
             this.txtApellPac.Size = new System.Drawing.Size(189, 23);
             this.txtApellPac.TabIndex = 6;
@@ -285,7 +285,7 @@
             // 
             lblLocPac.AutoSize = true;
             lblLocPac.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Bold);
-            lblLocPac.Location = new System.Drawing.Point(64, 121);
+            lblLocPac.Location = new System.Drawing.Point(50, 120);
             lblLocPac.Name = "lblLocPac";
             lblLocPac.Size = new System.Drawing.Size(68, 18);
             lblLocPac.TabIndex = 7;
@@ -296,7 +296,7 @@
             this.txtLocPac.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(179)))), ((int)(((byte)(229)))), ((int)(((byte)(252)))));
             this.txtLocPac.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.pacientesBindingSource, "localidad", true));
             this.txtLocPac.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Bold);
-            this.txtLocPac.Location = new System.Drawing.Point(161, 120);
+            this.txtLocPac.Location = new System.Drawing.Point(147, 119);
             this.txtLocPac.Name = "txtLocPac";
             this.txtLocPac.Size = new System.Drawing.Size(189, 23);
             this.txtLocPac.TabIndex = 8;
@@ -305,7 +305,7 @@
             // 
             lblAlerPac.AutoSize = true;
             lblAlerPac.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Bold);
-            lblAlerPac.Location = new System.Drawing.Point(64, 149);
+            lblAlerPac.Location = new System.Drawing.Point(50, 148);
             lblAlerPac.Name = "lblAlerPac";
             lblAlerPac.Size = new System.Drawing.Size(60, 18);
             lblAlerPac.TabIndex = 9;
@@ -316,7 +316,7 @@
             this.txtAlePac.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(179)))), ((int)(((byte)(229)))), ((int)(((byte)(252)))));
             this.txtAlePac.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.pacientesBindingSource, "alergias", true));
             this.txtAlePac.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Bold);
-            this.txtAlePac.Location = new System.Drawing.Point(161, 149);
+            this.txtAlePac.Location = new System.Drawing.Point(147, 148);
             this.txtAlePac.Multiline = true;
             this.txtAlePac.Name = "txtAlePac";
             this.txtAlePac.Size = new System.Drawing.Size(189, 42);
@@ -326,7 +326,7 @@
             // 
             lblAdesPac.AutoSize = true;
             lblAdesPac.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Bold);
-            lblAdesPac.Location = new System.Drawing.Point(64, 197);
+            lblAdesPac.Location = new System.Drawing.Point(50, 196);
             lblAdesPac.Name = "lblAdesPac";
             lblAdesPac.Size = new System.Drawing.Size(71, 18);
             lblAdesPac.TabIndex = 11;
@@ -337,7 +337,7 @@
             this.txtAdesPac.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(179)))), ((int)(((byte)(229)))), ((int)(((byte)(252)))));
             this.txtAdesPac.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.pacientesBindingSource, "adestacar", true));
             this.txtAdesPac.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Bold);
-            this.txtAdesPac.Location = new System.Drawing.Point(161, 197);
+            this.txtAdesPac.Location = new System.Drawing.Point(147, 196);
             this.txtAdesPac.Multiline = true;
             this.txtAdesPac.Name = "txtAdesPac";
             this.txtAdesPac.Size = new System.Drawing.Size(189, 39);

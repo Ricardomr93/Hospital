@@ -82,5 +82,29 @@ namespace Hospital
             bindingNavigatorAddNewItem.Enabled = false;//inhabilita el boton para evitar excepciones
             lblNoIDMed.Visible = false;//oculta el label para evitar mostrar numeros negativos
         }
+
+        private void bindingNavigatorDeleteItem_Click(object sender, EventArgs e)
+        {
+            int regs;
+            DialogResult resp = new DialogResult();
+            resp = MessageBox.Show("Seguro que quiere eliminar este registo?", "Eliminar Registro",
+                MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            if (resp == System.Windows.Forms.DialogResult.Yes)
+            {
+                try
+                {
+                    regs = this.medicosTableAdapter.Delete(int.Parse(this.lblNoIDMed.Text));
+                    if (regs > 0)
+                    {
+                        MessageBox.Show("Registro eliminado", "Correcto", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
+                }
+                catch (Exception)
+                {
+
+                    MessageBox.Show("No se ha podido eliminar, el médico tiene pacientes ligados a él", "Atencion", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+        }
     }
 }
