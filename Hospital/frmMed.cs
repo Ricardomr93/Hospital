@@ -24,7 +24,13 @@ namespace Hospital
                 this.Validate();
                 this.medicosBindingSource.EndEdit();
                 this.tableAdapterManager.UpdateAll(this.hospitalDs);
-                MessageBox.Show("Guardado con éxito", "Guardado", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                //MessageBox.Show("Guardado con éxito", "Guardado", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                bindingNavigatorAddNewItem.Enabled = true;//habilita el boton de nuevo registro
+                DialogResult r =  MessageBox.Show("Guardado con éxito \nDesea continuar?", "Guardado", MessageBoxButtons.YesNo, MessageBoxIcon.Information);
+                if (r == DialogResult.No)
+                {
+                    this.Close();
+                }
             }
             catch (NoNullAllowedException ex)
             {
@@ -69,6 +75,12 @@ namespace Hospital
                 return;
             }
             pcbMed.Image = Image.FromFile(ofdFoto.FileName);
+        }
+
+        private void bindingNavigatorAddNewItem_Click(object sender, EventArgs e)
+        {
+            bindingNavigatorAddNewItem.Enabled = false;//inhabilita el boton para evitar excepciones
+            lblNoIDMed.Visible = false;//oculta el label para evitar mostrar numeros negativos
         }
     }
 }

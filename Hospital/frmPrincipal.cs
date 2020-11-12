@@ -1,4 +1,5 @@
 ﻿using Hospital.hospitalDsTableAdapters;
+using Hospital.Properties;
 using MySql.Data.MySqlClient;
 using System;
 using System.Collections;
@@ -84,12 +85,12 @@ namespace Hospital
                 id.Add(hospitalDs.medicos[i].idmedico);
             }
         }
-     
+
 
         private void cargarMedicos()
         {
             hospitalDs.medicos.Clear();
-            medicosTableAdapter.FillByIDMed(hospitalDs.medicos,);
+            medicosTableAdapter.FillByIDMed(hospitalDs.medicos, int.Parse(id[cmbbNomAten.SelectedIndex].ToString()));
             if (hospitalDs.medicos.Count > 0)
             {
                 lblNoIDMed.Text = hospitalDs.medicos[0].idmedico.ToString();
@@ -145,7 +146,15 @@ namespace Hospital
         private void btnGesMed_Click(object sender, EventArgs e)
         {
             frmMed fm = new frmMed();
-            fm.ShowDialog();
+            try
+            {
+                fm.ShowDialog();
+            }
+            catch (NoNullAllowedException)
+            {
+                //MessageBox.Show("No se ha podido guardar, " + ex.Message, "Atencion", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+
         }
 
         private void lblNoIDMed_TextChanged(object sender, EventArgs e)
@@ -167,6 +176,7 @@ namespace Hospital
                 }
                 catch (Exception)
                 {
+                    pcbMed.Image = Resources.medicos;
                 }
             }
         }

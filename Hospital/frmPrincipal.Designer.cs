@@ -504,6 +504,7 @@
             // 
             // pcbMed
             // 
+            this.pcbMed.Image = global::Hospital.Properties.Resources.medicos;
             this.pcbMed.Location = new System.Drawing.Point(17, 42);
             this.pcbMed.Name = "pcbMed";
             this.pcbMed.Size = new System.Drawing.Size(112, 122);

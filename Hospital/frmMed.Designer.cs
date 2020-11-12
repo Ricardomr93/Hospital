@@ -29,12 +29,12 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmMed));
             System.Windows.Forms.Label lblMovil;
             System.Windows.Forms.Label lblApellMed;
             System.Windows.Forms.Label lblEspeMed;
             System.Windows.Forms.Label lblNomMed;
             System.Windows.Forms.Label lblIDMed;
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmMed));
             this.hospitalDs = new Hospital.hospitalDs();
             this.medicosBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.medicosTableAdapter = new Hospital.hospitalDsTableAdapters.medicosTableAdapter();
@@ -76,6 +76,56 @@
             ((System.ComponentModel.ISupportInitialize)(this.pcbMed)).BeginInit();
             this.SuspendLayout();
             // 
+            // lblMovil
+            // 
+            lblMovil.AutoSize = true;
+            lblMovil.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Bold);
+            lblMovil.Location = new System.Drawing.Point(144, 146);
+            lblMovil.Name = "lblMovil";
+            lblMovil.Size = new System.Drawing.Size(47, 18);
+            lblMovil.TabIndex = 7;
+            lblMovil.Text = "movil:";
+            // 
+            // lblApellMed
+            // 
+            lblApellMed.AutoSize = true;
+            lblApellMed.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Bold);
+            lblApellMed.Location = new System.Drawing.Point(144, 120);
+            lblApellMed.Name = "lblApellMed";
+            lblApellMed.Size = new System.Drawing.Size(69, 18);
+            lblApellMed.TabIndex = 5;
+            lblApellMed.Text = "apellidos:";
+            // 
+            // lblEspeMed
+            // 
+            lblEspeMed.AutoSize = true;
+            lblEspeMed.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Bold);
+            lblEspeMed.Location = new System.Drawing.Point(144, 172);
+            lblEspeMed.Name = "lblEspeMed";
+            lblEspeMed.Size = new System.Drawing.Size(90, 18);
+            lblEspeMed.TabIndex = 9;
+            lblEspeMed.Text = "especialidad:";
+            // 
+            // lblNomMed
+            // 
+            lblNomMed.AutoSize = true;
+            lblNomMed.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Bold);
+            lblNomMed.Location = new System.Drawing.Point(144, 94);
+            lblNomMed.Name = "lblNomMed";
+            lblNomMed.Size = new System.Drawing.Size(61, 18);
+            lblNomMed.TabIndex = 3;
+            lblNomMed.Text = "nombre:";
+            // 
+            // lblIDMed
+            // 
+            lblIDMed.AutoSize = true;
+            lblIDMed.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Bold);
+            lblIDMed.Location = new System.Drawing.Point(144, 65);
+            lblIDMed.Name = "lblIDMed";
+            lblIDMed.Size = new System.Drawing.Size(70, 18);
+            lblIDMed.TabIndex = 1;
+            lblIDMed.Text = "idmedico:";
+            // 
             // hospitalDs
             // 
             this.hospitalDs.DataSetName = "hospitalDs";
@@ -104,7 +154,7 @@
             this.medicosBindingNavigator.AddNewItem = this.bindingNavigatorAddNewItem;
             this.medicosBindingNavigator.BindingSource = this.medicosBindingSource;
             this.medicosBindingNavigator.CountItem = this.bindingNavigatorCountItem;
-            this.medicosBindingNavigator.DeleteItem = this.bindingNavigatorDeleteItem;
+            this.medicosBindingNavigator.DeleteItem = null;
             this.medicosBindingNavigator.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.bindingNavigatorMoveFirstItem,
             this.bindingNavigatorMovePreviousItem,
@@ -137,6 +187,7 @@
             this.bindingNavigatorAddNewItem.RightToLeftAutoMirrorImage = true;
             this.bindingNavigatorAddNewItem.Size = new System.Drawing.Size(23, 22);
             this.bindingNavigatorAddNewItem.Text = "Agregar nuevo";
+            this.bindingNavigatorAddNewItem.Click += new System.EventHandler(this.bindingNavigatorAddNewItem_Click);
             // 
             // bindingNavigatorCountItem
             // 
@@ -181,6 +232,7 @@
             // 
             this.bindingNavigatorPositionItem.AccessibleName = "Posición";
             this.bindingNavigatorPositionItem.AutoSize = false;
+            this.bindingNavigatorPositionItem.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.bindingNavigatorPositionItem.Name = "bindingNavigatorPositionItem";
             this.bindingNavigatorPositionItem.Size = new System.Drawing.Size(50, 23);
             this.bindingNavigatorPositionItem.Text = "0";
@@ -247,26 +299,6 @@
             this.txtApellMed.Size = new System.Drawing.Size(121, 23);
             this.txtApellMed.TabIndex = 6;
             // 
-            // lblMovil
-            // 
-            lblMovil.AutoSize = true;
-            lblMovil.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Bold);
-            lblMovil.Location = new System.Drawing.Point(144, 146);
-            lblMovil.Name = "lblMovil";
-            lblMovil.Size = new System.Drawing.Size(47, 18);
-            lblMovil.TabIndex = 7;
-            lblMovil.Text = "movil:";
-            // 
-            // lblApellMed
-            // 
-            lblApellMed.AutoSize = true;
-            lblApellMed.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Bold);
-            lblApellMed.Location = new System.Drawing.Point(144, 120);
-            lblApellMed.Name = "lblApellMed";
-            lblApellMed.Size = new System.Drawing.Size(69, 18);
-            lblApellMed.TabIndex = 5;
-            lblApellMed.Text = "apellidos:";
-            // 
             // txtMovilMed
             // 
             this.txtMovilMed.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(179)))), ((int)(((byte)(229)))), ((int)(((byte)(252)))));
@@ -286,26 +318,6 @@
             this.txtNomMed.Name = "txtNomMed";
             this.txtNomMed.Size = new System.Drawing.Size(121, 23);
             this.txtNomMed.TabIndex = 4;
-            // 
-            // lblEspeMed
-            // 
-            lblEspeMed.AutoSize = true;
-            lblEspeMed.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Bold);
-            lblEspeMed.Location = new System.Drawing.Point(144, 172);
-            lblEspeMed.Name = "lblEspeMed";
-            lblEspeMed.Size = new System.Drawing.Size(90, 18);
-            lblEspeMed.TabIndex = 9;
-            lblEspeMed.Text = "especialidad:";
-            // 
-            // lblNomMed
-            // 
-            lblNomMed.AutoSize = true;
-            lblNomMed.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Bold);
-            lblNomMed.Location = new System.Drawing.Point(144, 94);
-            lblNomMed.Name = "lblNomMed";
-            lblNomMed.Size = new System.Drawing.Size(61, 18);
-            lblNomMed.TabIndex = 3;
-            lblNomMed.Text = "nombre:";
             // 
             // cmbbEspeMed
             // 
@@ -329,16 +341,6 @@
             this.lblNoIDMed.Size = new System.Drawing.Size(121, 23);
             this.lblNoIDMed.TabIndex = 2;
             this.lblNoIDMed.Text = "label1";
-            // 
-            // lblIDMed
-            // 
-            lblIDMed.AutoSize = true;
-            lblIDMed.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Bold);
-            lblIDMed.Location = new System.Drawing.Point(144, 65);
-            lblIDMed.Name = "lblIDMed";
-            lblIDMed.Size = new System.Drawing.Size(70, 18);
-            lblIDMed.TabIndex = 1;
-            lblIDMed.Text = "idmedico:";
             // 
             // lblMedico
             // 
