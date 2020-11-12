@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Hospital.Properties;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -21,16 +22,25 @@ namespace Hospital
         {
             try
             {
-                this.Validate();
-                this.medicosBindingSource.EndEdit();
-                this.tableAdapterManager.UpdateAll(this.hospitalDs);
-                //MessageBox.Show("Guardado con éxito", "Guardado", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                bindingNavigatorAddNewItem.Enabled = true;//habilita el boton de nuevo registro
-                DialogResult r =  MessageBox.Show("Guardado con éxito \nDesea continuar?", "Guardado", MessageBoxButtons.YesNo, MessageBoxIcon.Information);
-                if (r == DialogResult.No)
+                if (is_valide())
                 {
-                    this.Close();
+                    this.Validate();
+                    this.medicosBindingSource.EndEdit();
+                    this.tableAdapterManager.UpdateAll(this.hospitalDs);
+                    //MessageBox.Show("Guardado con éxito", "Guardado", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    bindingNavigatorAddNewItem.Enabled = true;//habilita el boton de nuevo registro
+                    DialogResult r = MessageBox.Show("Guardado con éxito \nDesea continuar?", "Guardado", MessageBoxButtons.YesNo, MessageBoxIcon.Information);
+                    if (r == DialogResult.No)
+                    {
+                        this.Close();
+                    }
                 }
+                else
+                {
+                    MessageBox.Show("No se ha podido guardar, campos obligatorios vacios", "Atencion", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+                }
+
             }
             catch (NoNullAllowedException ex)
             {
@@ -44,8 +54,30 @@ namespace Hospital
             {
                 MessageBox.Show("No se ha podido guardar, " + exp.Message, "Atencion", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-            
 
+
+        }
+
+        private bool is_valide()
+        {
+            bool valid = true;
+            int e = errorTxt(txtApellMed) + errorTxt(txtMovilMed) + errorTxt(txtNomMed);
+            if (e > 0)
+            {
+                valid = false;
+            }
+            return valid;
+
+        }
+
+        private int errorTxt(TextBox t)
+        {
+            int e = 0;
+            if (t.Text.Equals("") || t == null)
+            {
+                e++;
+            }
+            return e;
         }
 
         private void frmMed_Load(object sender, EventArgs e)
