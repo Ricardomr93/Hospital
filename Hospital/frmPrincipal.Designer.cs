@@ -43,8 +43,6 @@
             this.cmbbPacAten = new System.Windows.Forms.ComboBox();
             this.lblNombreAten = new System.Windows.Forms.Label();
             this.cmbbEspeAten = new System.Windows.Forms.ComboBox();
-            this.especialidadesBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
-            this.hospitalDs = new Hospital.hospitalDs();
             this.lblEspeAten = new System.Windows.Forms.Label();
             this.lblFechaAten = new System.Windows.Forms.Label();
             this.pcbAten = new System.Windows.Forms.PictureBox();
@@ -64,12 +62,12 @@
             this.lblMedico = new System.Windows.Forms.Label();
             this.pcbMed = new System.Windows.Forms.PictureBox();
             this.pnlPaciente = new System.Windows.Forms.Panel();
+            this.lblNoIDPac = new System.Windows.Forms.Label();
             this.btnGesPac = new System.Windows.Forms.Button();
             this.txtADesPac = new System.Windows.Forms.TextBox();
             this.lblAlerPac = new System.Windows.Forms.Label();
             this.txtAlerPac = new System.Windows.Forms.TextBox();
             this.lblADesPac = new System.Windows.Forms.Label();
-            this.txtIDPac = new System.Windows.Forms.TextBox();
             this.lblIDPac = new System.Windows.Forms.Label();
             this.txtLocPac = new System.Windows.Forms.TextBox();
             this.pcbPac = new System.Windows.Forms.PictureBox();
@@ -84,12 +82,6 @@
             this.lblFecha = new System.Windows.Forms.Label();
             this.pnlCitasMed = new System.Windows.Forms.Panel();
             this.dgvCitas = new System.Windows.Forms.DataGridView();
-            this.idatencDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.fechaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.apellidosDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.diagnosticoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.atenmedpacBindingSource2 = new System.Windows.Forms.BindingSource(this.components);
             this.btnActMedCita = new System.Windows.Forms.Button();
             this.lblNoIDMedCita = new System.Windows.Forms.Label();
             this.lblIDMedCita = new System.Windows.Forms.Label();
@@ -99,26 +91,33 @@
             this.pcbCita = new System.Windows.Forms.PictureBox();
             this.lblMedCita = new System.Windows.Forms.Label();
             this.lblCitas = new System.Windows.Forms.Label();
-            this.atenmedpacBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
-            this.atenmedpacBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.btnPacMedDia = new System.Windows.Forms.Button();
             this.btnHisto = new System.Windows.Forms.Button();
             this.rljFecha = new System.Windows.Forms.Timer(this.components);
             this.rljHora = new System.Windows.Forms.Timer(this.components);
             this.medicosibfk1BindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.ofdFoto = new System.Windows.Forms.OpenFileDialog();
+            this.idatencDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.fechaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.apellidosDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.diagnosticoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.atenmedpacBindingSource2 = new System.Windows.Forms.BindingSource(this.components);
+            this.hospitalDs = new Hospital.hospitalDs();
             this.especialidadesBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.especialidadesBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            this.atenmedpacBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            this.atenmedpacBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.medicosBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.medicosTableAdapter = new Hospital.hospitalDsTableAdapters.medicosTableAdapter();
             this.atenmedpacTableAdapter = new Hospital.hospitalDsTableAdapters.atenmedpacTableAdapter();
             this.tableAdapterManager = new Hospital.hospitalDsTableAdapters.TableAdapterManager();
             this.especialidadesTableAdapter = new Hospital.hospitalDsTableAdapters.especialidadesTableAdapter();
             this.pacientesTableAdapter = new Hospital.hospitalDsTableAdapters.pacientesTableAdapter();
-            this.ofdFoto = new System.Windows.Forms.OpenFileDialog();
+            this.atencsmedicasTableAdapter = new Hospital.hospitalDsTableAdapters.atencsmedicasTableAdapter();
             this.pnlDatos.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pcbDatos)).BeginInit();
             this.pnlAtencion.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.especialidadesBindingSource1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.hospitalDs)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pcbAten)).BeginInit();
             this.pnlMedico.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pcbMed)).BeginInit();
@@ -127,12 +126,14 @@
             this.pnlfecha.SuspendLayout();
             this.pnlCitasMed.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvCitas)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.atenmedpacBindingSource2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pcbCita)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.medicosibfk1BindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.atenmedpacBindingSource2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.hospitalDs)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.especialidadesBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.especialidadesBindingSource1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.atenmedpacBindingSource1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.atenmedpacBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.medicosibfk1BindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.especialidadesBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.medicosBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
@@ -257,6 +258,7 @@
             this.btnAnCita.TabIndex = 14;
             this.btnAnCita.Text = "Añadir Cita";
             this.btnAnCita.UseVisualStyleBackColor = false;
+            this.btnAnCita.Click += new System.EventHandler(this.btnAnCita_Click);
             // 
             // lblPacAten
             // 
@@ -293,8 +295,6 @@
             // cmbbEspeAten
             // 
             this.cmbbEspeAten.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(179)))), ((int)(((byte)(229)))), ((int)(((byte)(252)))));
-            this.cmbbEspeAten.DataSource = this.especialidadesBindingSource1;
-            this.cmbbEspeAten.DisplayMember = "especialidad";
             this.cmbbEspeAten.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbbEspeAten.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Bold);
             this.cmbbEspeAten.FormattingEnabled = true;
@@ -303,16 +303,6 @@
             this.cmbbEspeAten.Size = new System.Drawing.Size(110, 23);
             this.cmbbEspeAten.TabIndex = 17;
             this.cmbbEspeAten.SelectedValueChanged += new System.EventHandler(this.cmbbEspeAten_SelectedValueChanged);
-            // 
-            // especialidadesBindingSource1
-            // 
-            this.especialidadesBindingSource1.DataMember = "especialidades";
-            this.especialidadesBindingSource1.DataSource = this.hospitalDs;
-            // 
-            // hospitalDs
-            // 
-            this.hospitalDs.DataSetName = "hospitalDs";
-            this.hospitalDs.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // lblEspeAten
             // 
@@ -504,6 +494,7 @@
             // 
             // pcbMed
             // 
+            this.pcbMed.Image = global::Hospital.Properties.Resources.medicos;
             this.pcbMed.Location = new System.Drawing.Point(17, 42);
             this.pcbMed.Name = "pcbMed";
             this.pcbMed.Size = new System.Drawing.Size(112, 122);
@@ -514,12 +505,12 @@
             // pnlPaciente
             // 
             this.pnlPaciente.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(119)))), ((int)(((byte)(189)))));
+            this.pnlPaciente.Controls.Add(this.lblNoIDPac);
             this.pnlPaciente.Controls.Add(this.btnGesPac);
             this.pnlPaciente.Controls.Add(this.txtADesPac);
             this.pnlPaciente.Controls.Add(this.lblAlerPac);
             this.pnlPaciente.Controls.Add(this.txtAlerPac);
             this.pnlPaciente.Controls.Add(this.lblADesPac);
-            this.pnlPaciente.Controls.Add(this.txtIDPac);
             this.pnlPaciente.Controls.Add(this.lblIDPac);
             this.pnlPaciente.Controls.Add(this.txtLocPac);
             this.pnlPaciente.Controls.Add(this.pcbPac);
@@ -533,6 +524,16 @@
             this.pnlPaciente.Name = "pnlPaciente";
             this.pnlPaciente.Size = new System.Drawing.Size(371, 294);
             this.pnlPaciente.TabIndex = 3;
+            // 
+            // lblNoIDPac
+            // 
+            this.lblNoIDPac.AutoSize = true;
+            this.lblNoIDPac.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Bold);
+            this.lblNoIDPac.Location = new System.Drawing.Point(215, 36);
+            this.lblNoIDPac.Name = "lblNoIDPac";
+            this.lblNoIDPac.Size = new System.Drawing.Size(15, 18);
+            this.lblNoIDPac.TabIndex = 24;
+            this.lblNoIDPac.Text = "0";
             // 
             // btnGesPac
             // 
@@ -548,6 +549,7 @@
             this.btnGesPac.TabIndex = 14;
             this.btnGesPac.Text = "Gestión de Pacientes";
             this.btnGesPac.UseVisualStyleBackColor = false;
+            this.btnGesPac.Click += new System.EventHandler(this.btnGesPac_Click);
             // 
             // txtADesPac
             // 
@@ -590,16 +592,6 @@
             this.lblADesPac.Size = new System.Drawing.Size(77, 18);
             this.lblADesPac.TabIndex = 20;
             this.lblADesPac.Text = "A Destacar:";
-            // 
-            // txtIDPac
-            // 
-            this.txtIDPac.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(179)))), ((int)(((byte)(229)))), ((int)(((byte)(252)))));
-            this.txtIDPac.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtIDPac.Location = new System.Drawing.Point(218, 35);
-            this.txtIDPac.Name = "txtIDPac";
-            this.txtIDPac.ReadOnly = true;
-            this.txtIDPac.Size = new System.Drawing.Size(122, 23);
-            this.txtIDPac.TabIndex = 15;
             // 
             // lblIDPac
             // 
@@ -761,45 +753,6 @@
             this.dgvCitas.Size = new System.Drawing.Size(499, 261);
             this.dgvCitas.TabIndex = 30;
             // 
-            // idatencDataGridViewTextBoxColumn
-            // 
-            this.idatencDataGridViewTextBoxColumn.DataPropertyName = "idatenc";
-            this.idatencDataGridViewTextBoxColumn.HeaderText = "idatenc";
-            this.idatencDataGridViewTextBoxColumn.Name = "idatencDataGridViewTextBoxColumn";
-            this.idatencDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // fechaDataGridViewTextBoxColumn
-            // 
-            this.fechaDataGridViewTextBoxColumn.DataPropertyName = "fecha";
-            this.fechaDataGridViewTextBoxColumn.HeaderText = "fecha";
-            this.fechaDataGridViewTextBoxColumn.Name = "fechaDataGridViewTextBoxColumn";
-            this.fechaDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // dataGridViewTextBoxColumn1
-            // 
-            this.dataGridViewTextBoxColumn1.DataPropertyName = "nombre";
-            this.dataGridViewTextBoxColumn1.HeaderText = "nombre";
-            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
-            this.dataGridViewTextBoxColumn1.ReadOnly = true;
-            // 
-            // apellidosDataGridViewTextBoxColumn
-            // 
-            this.apellidosDataGridViewTextBoxColumn.DataPropertyName = "apellidos";
-            this.apellidosDataGridViewTextBoxColumn.HeaderText = "apellidos";
-            this.apellidosDataGridViewTextBoxColumn.Name = "apellidosDataGridViewTextBoxColumn";
-            this.apellidosDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // diagnosticoDataGridViewTextBoxColumn
-            // 
-            this.diagnosticoDataGridViewTextBoxColumn.DataPropertyName = "diagnostico";
-            this.diagnosticoDataGridViewTextBoxColumn.HeaderText = "diagnostico";
-            this.diagnosticoDataGridViewTextBoxColumn.Name = "diagnosticoDataGridViewTextBoxColumn";
-            // 
-            // atenmedpacBindingSource2
-            // 
-            this.atenmedpacBindingSource2.DataMember = "atenmedpac";
-            this.atenmedpacBindingSource2.DataSource = this.hospitalDs;
-            // 
             // btnActMedCita
             // 
             this.btnActMedCita.BackColor = System.Drawing.Color.Yellow;
@@ -808,18 +761,18 @@
             this.btnActMedCita.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(214)))), ((int)(((byte)(0)))));
             this.btnActMedCita.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnActMedCita.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Bold);
-            this.btnActMedCita.Location = new System.Drawing.Point(382, 81);
+            this.btnActMedCita.Location = new System.Drawing.Point(359, 81);
             this.btnActMedCita.Name = "btnActMedCita";
-            this.btnActMedCita.Size = new System.Drawing.Size(145, 28);
+            this.btnActMedCita.Size = new System.Drawing.Size(168, 28);
             this.btnActMedCita.TabIndex = 25;
-            this.btnActMedCita.Text = "Actualiza Médicos";
+            this.btnActMedCita.Text = "Actualizar Diagnóstico";
             this.btnActMedCita.UseVisualStyleBackColor = false;
             // 
             // lblNoIDMedCita
             // 
             this.lblNoIDMedCita.AutoSize = true;
             this.lblNoIDMedCita.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblNoIDMedCita.Location = new System.Drawing.Point(471, 45);
+            this.lblNoIDMedCita.Location = new System.Drawing.Point(437, 45);
             this.lblNoIDMedCita.Name = "lblNoIDMedCita";
             this.lblNoIDMedCita.Size = new System.Drawing.Size(15, 18);
             this.lblNoIDMedCita.TabIndex = 29;
@@ -829,7 +782,7 @@
             // 
             this.lblIDMedCita.AutoSize = true;
             this.lblIDMedCita.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblIDMedCita.Location = new System.Drawing.Point(390, 45);
+            this.lblIDMedCita.Location = new System.Drawing.Point(356, 45);
             this.lblIDMedCita.Name = "lblIDMedCita";
             this.lblIDMedCita.Size = new System.Drawing.Size(75, 18);
             this.lblIDMedCita.TabIndex = 28;
@@ -839,7 +792,7 @@
             // 
             this.lblNomEspeCita.AutoSize = true;
             this.lblNomEspeCita.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblNomEspeCita.Location = new System.Drawing.Point(247, 85);
+            this.lblNomEspeCita.Location = new System.Drawing.Point(221, 86);
             this.lblNomEspeCita.Name = "lblNomEspeCita";
             this.lblNomEspeCita.Size = new System.Drawing.Size(16, 18);
             this.lblNomEspeCita.TabIndex = 27;
@@ -849,7 +802,7 @@
             // 
             this.lblEspeCita.AutoSize = true;
             this.lblEspeCita.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblEspeCita.Location = new System.Drawing.Point(148, 86);
+            this.lblEspeCita.Location = new System.Drawing.Point(133, 86);
             this.lblEspeCita.Name = "lblEspeCita";
             this.lblEspeCita.Size = new System.Drawing.Size(89, 18);
             this.lblEspeCita.TabIndex = 26;
@@ -861,7 +814,7 @@
             this.cmbbMedCita.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbbMedCita.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Bold);
             this.cmbbMedCita.FormattingEnabled = true;
-            this.cmbbMedCita.Location = new System.Drawing.Point(250, 44);
+            this.cmbbMedCita.Location = new System.Drawing.Point(224, 44);
             this.cmbbMedCita.Name = "cmbbMedCita";
             this.cmbbMedCita.Size = new System.Drawing.Size(121, 23);
             this.cmbbMedCita.TabIndex = 14;
@@ -881,7 +834,7 @@
             // 
             this.lblMedCita.AutoSize = true;
             this.lblMedCita.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblMedCita.Location = new System.Drawing.Point(148, 45);
+            this.lblMedCita.Location = new System.Drawing.Point(133, 45);
             this.lblMedCita.Name = "lblMedCita";
             this.lblMedCita.Size = new System.Drawing.Size(59, 18);
             this.lblMedCita.TabIndex = 15;
@@ -896,16 +849,6 @@
             this.lblCitas.Size = new System.Drawing.Size(120, 19);
             this.lblCitas.TabIndex = 24;
             this.lblCitas.Text = "Citas del médico";
-            // 
-            // atenmedpacBindingSource1
-            // 
-            this.atenmedpacBindingSource1.DataMember = "atenmedpac";
-            this.atenmedpacBindingSource1.DataSource = this.hospitalDs;
-            // 
-            // atenmedpacBindingSource
-            // 
-            this.atenmedpacBindingSource.DataMember = "atenmedpac";
-            this.atenmedpacBindingSource.DataSource = this.hospitalDs;
             // 
             // btnPacMedDia
             // 
@@ -950,10 +893,74 @@
             this.medicosibfk1BindingSource.DataMember = "medicos_ibfk_1";
             this.medicosibfk1BindingSource.DataSource = this.especialidadesBindingSource;
             // 
+            // ofdFoto
+            // 
+            this.ofdFoto.FileName = "openFileDialog1";
+            this.ofdFoto.Filter = "image files|*.jpg;*.png;*.gif;*.ico;.*;";
+            // 
+            // idatencDataGridViewTextBoxColumn
+            // 
+            this.idatencDataGridViewTextBoxColumn.DataPropertyName = "idatenc";
+            this.idatencDataGridViewTextBoxColumn.HeaderText = "idatenc";
+            this.idatencDataGridViewTextBoxColumn.Name = "idatencDataGridViewTextBoxColumn";
+            this.idatencDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // fechaDataGridViewTextBoxColumn
+            // 
+            this.fechaDataGridViewTextBoxColumn.DataPropertyName = "fecha";
+            this.fechaDataGridViewTextBoxColumn.HeaderText = "fecha";
+            this.fechaDataGridViewTextBoxColumn.Name = "fechaDataGridViewTextBoxColumn";
+            this.fechaDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // dataGridViewTextBoxColumn1
+            // 
+            this.dataGridViewTextBoxColumn1.DataPropertyName = "nombre";
+            this.dataGridViewTextBoxColumn1.HeaderText = "nombre";
+            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
+            this.dataGridViewTextBoxColumn1.ReadOnly = true;
+            // 
+            // apellidosDataGridViewTextBoxColumn
+            // 
+            this.apellidosDataGridViewTextBoxColumn.DataPropertyName = "apellidos";
+            this.apellidosDataGridViewTextBoxColumn.HeaderText = "apellidos";
+            this.apellidosDataGridViewTextBoxColumn.Name = "apellidosDataGridViewTextBoxColumn";
+            this.apellidosDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // diagnosticoDataGridViewTextBoxColumn
+            // 
+            this.diagnosticoDataGridViewTextBoxColumn.DataPropertyName = "diagnostico";
+            this.diagnosticoDataGridViewTextBoxColumn.HeaderText = "diagnostico";
+            this.diagnosticoDataGridViewTextBoxColumn.Name = "diagnosticoDataGridViewTextBoxColumn";
+            // 
+            // atenmedpacBindingSource2
+            // 
+            this.atenmedpacBindingSource2.DataMember = "atenmedpac";
+            this.atenmedpacBindingSource2.DataSource = this.hospitalDs;
+            // 
+            // hospitalDs
+            // 
+            this.hospitalDs.DataSetName = "hospitalDs";
+            this.hospitalDs.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
             // especialidadesBindingSource
             // 
             this.especialidadesBindingSource.DataMember = "especialidades";
             this.especialidadesBindingSource.DataSource = this.hospitalDs;
+            // 
+            // especialidadesBindingSource1
+            // 
+            this.especialidadesBindingSource1.DataMember = "especialidades";
+            this.especialidadesBindingSource1.DataSource = this.hospitalDs;
+            // 
+            // atenmedpacBindingSource1
+            // 
+            this.atenmedpacBindingSource1.DataMember = "atenmedpac";
+            this.atenmedpacBindingSource1.DataSource = this.hospitalDs;
+            // 
+            // atenmedpacBindingSource
+            // 
+            this.atenmedpacBindingSource.DataMember = "atenmedpac";
+            this.atenmedpacBindingSource.DataSource = this.hospitalDs;
             // 
             // medicosBindingSource
             // 
@@ -985,10 +992,9 @@
             // 
             this.pacientesTableAdapter.ClearBeforeFill = true;
             // 
-            // ofdFoto
+            // atencsmedicasTableAdapter
             // 
-            this.ofdFoto.FileName = "openFileDialog1";
-            this.ofdFoto.Filter = "image files|*.jpg;*.png;*.gif;*.ico;.*;";
+            this.atencsmedicasTableAdapter.ClearBeforeFill = true;
             // 
             // frmPrincipal
             // 
@@ -1013,8 +1019,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.pcbDatos)).EndInit();
             this.pnlAtencion.ResumeLayout(false);
             this.pnlAtencion.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.especialidadesBindingSource1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.hospitalDs)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pcbAten)).EndInit();
             this.pnlMedico.ResumeLayout(false);
             this.pnlMedico.PerformLayout();
@@ -1027,12 +1031,14 @@
             this.pnlCitasMed.ResumeLayout(false);
             this.pnlCitasMed.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvCitas)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.atenmedpacBindingSource2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pcbCita)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.medicosibfk1BindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.atenmedpacBindingSource2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.hospitalDs)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.especialidadesBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.especialidadesBindingSource1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.atenmedpacBindingSource1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.atenmedpacBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.medicosibfk1BindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.especialidadesBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.medicosBindingSource)).EndInit();
             this.ResumeLayout(false);
 
@@ -1080,7 +1086,6 @@
         private System.Windows.Forms.Label lblNomPac;
         private System.Windows.Forms.Label lblLocPac;
         private System.Windows.Forms.Label lblApellPac;
-        private System.Windows.Forms.TextBox txtIDPac;
         private System.Windows.Forms.Label lblIDPac;
         private System.Windows.Forms.Button btnGesPac;
         private System.Windows.Forms.TextBox txtADesPac;
@@ -1127,6 +1132,8 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
         private System.Windows.Forms.DataGridViewTextBoxColumn apellidosDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn diagnosticoDataGridViewTextBoxColumn;
+        private System.Windows.Forms.Label lblNoIDPac;
+        private hospitalDsTableAdapters.atencsmedicasTableAdapter atencsmedicasTableAdapter;
     }
 }
 

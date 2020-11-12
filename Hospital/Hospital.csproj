@@ -57,6 +57,12 @@
     <Compile Include="frmMed.Designer.cs">
       <DependentUpon>frmMed.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmPac.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmPac.Designer.cs">
+      <DependentUpon>frmPac.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmPrincipal.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -75,6 +81,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="frmMed.resx">
       <DependentUpon>frmMed.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmPac.resx">
+      <DependentUpon>frmPac.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmPrincipal.resx">
       <DependentUpon>frmPrincipal.cs</DependentUpon>

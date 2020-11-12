@@ -29,12 +29,12 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmMed));
             System.Windows.Forms.Label lblMovil;
             System.Windows.Forms.Label lblApellMed;
             System.Windows.Forms.Label lblEspeMed;
             System.Windows.Forms.Label lblNomMed;
             System.Windows.Forms.Label lblIDMed;
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmMed));
             this.hospitalDs = new Hospital.hospitalDs();
             this.medicosBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.medicosTableAdapter = new Hospital.hospitalDsTableAdapters.medicosTableAdapter();
@@ -42,7 +42,6 @@
             this.medicosBindingNavigator = new System.Windows.Forms.BindingNavigator(this.components);
             this.bindingNavigatorAddNewItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorCountItem = new System.Windows.Forms.ToolStripLabel();
-            this.bindingNavigatorDeleteItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorMoveFirstItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorMovePreviousItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorSeparator = new System.Windows.Forms.ToolStripSeparator();
@@ -51,6 +50,7 @@
             this.bindingNavigatorMoveNextItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorMoveLastItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorSeparator2 = new System.Windows.Forms.ToolStripSeparator();
+            this.bindingNavigatorDeleteItem = new System.Windows.Forms.ToolStripButton();
             this.medicosBindingNavigatorSaveItem = new System.Windows.Forms.ToolStripButton();
             this.especialidadesBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.especialidadesTableAdapter = new Hospital.hospitalDsTableAdapters.especialidadesTableAdapter();
@@ -75,6 +75,56 @@
             ((System.ComponentModel.ISupportInitialize)(this.especialidadesBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pcbMed)).BeginInit();
             this.SuspendLayout();
+            // 
+            // lblMovil
+            // 
+            lblMovil.AutoSize = true;
+            lblMovil.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Bold);
+            lblMovil.Location = new System.Drawing.Point(144, 146);
+            lblMovil.Name = "lblMovil";
+            lblMovil.Size = new System.Drawing.Size(47, 18);
+            lblMovil.TabIndex = 7;
+            lblMovil.Text = "movil:";
+            // 
+            // lblApellMed
+            // 
+            lblApellMed.AutoSize = true;
+            lblApellMed.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Bold);
+            lblApellMed.Location = new System.Drawing.Point(144, 120);
+            lblApellMed.Name = "lblApellMed";
+            lblApellMed.Size = new System.Drawing.Size(69, 18);
+            lblApellMed.TabIndex = 5;
+            lblApellMed.Text = "apellidos:";
+            // 
+            // lblEspeMed
+            // 
+            lblEspeMed.AutoSize = true;
+            lblEspeMed.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Bold);
+            lblEspeMed.Location = new System.Drawing.Point(144, 172);
+            lblEspeMed.Name = "lblEspeMed";
+            lblEspeMed.Size = new System.Drawing.Size(90, 18);
+            lblEspeMed.TabIndex = 9;
+            lblEspeMed.Text = "especialidad:";
+            // 
+            // lblNomMed
+            // 
+            lblNomMed.AutoSize = true;
+            lblNomMed.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Bold);
+            lblNomMed.Location = new System.Drawing.Point(144, 94);
+            lblNomMed.Name = "lblNomMed";
+            lblNomMed.Size = new System.Drawing.Size(61, 18);
+            lblNomMed.TabIndex = 3;
+            lblNomMed.Text = "nombre:";
+            // 
+            // lblIDMed
+            // 
+            lblIDMed.AutoSize = true;
+            lblIDMed.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Bold);
+            lblIDMed.Location = new System.Drawing.Point(144, 65);
+            lblIDMed.Name = "lblIDMed";
+            lblIDMed.Size = new System.Drawing.Size(70, 18);
+            lblIDMed.TabIndex = 1;
+            lblIDMed.Text = "idmedico:";
             // 
             // hospitalDs
             // 
@@ -102,9 +152,10 @@
             // medicosBindingNavigator
             // 
             this.medicosBindingNavigator.AddNewItem = this.bindingNavigatorAddNewItem;
+            this.medicosBindingNavigator.BackColor = System.Drawing.Color.LightSkyBlue;
             this.medicosBindingNavigator.BindingSource = this.medicosBindingSource;
             this.medicosBindingNavigator.CountItem = this.bindingNavigatorCountItem;
-            this.medicosBindingNavigator.DeleteItem = this.bindingNavigatorDeleteItem;
+            this.medicosBindingNavigator.DeleteItem = null;
             this.medicosBindingNavigator.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.bindingNavigatorMoveFirstItem,
             this.bindingNavigatorMovePreviousItem,
@@ -137,6 +188,7 @@
             this.bindingNavigatorAddNewItem.RightToLeftAutoMirrorImage = true;
             this.bindingNavigatorAddNewItem.Size = new System.Drawing.Size(23, 22);
             this.bindingNavigatorAddNewItem.Text = "Agregar nuevo";
+            this.bindingNavigatorAddNewItem.Click += new System.EventHandler(this.bindingNavigatorAddNewItem_Click);
             // 
             // bindingNavigatorCountItem
             // 
@@ -144,15 +196,6 @@
             this.bindingNavigatorCountItem.Size = new System.Drawing.Size(37, 22);
             this.bindingNavigatorCountItem.Text = "de {0}";
             this.bindingNavigatorCountItem.ToolTipText = "Número total de elementos";
-            // 
-            // bindingNavigatorDeleteItem
-            // 
-            this.bindingNavigatorDeleteItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.bindingNavigatorDeleteItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorDeleteItem.Image")));
-            this.bindingNavigatorDeleteItem.Name = "bindingNavigatorDeleteItem";
-            this.bindingNavigatorDeleteItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorDeleteItem.Size = new System.Drawing.Size(23, 22);
-            this.bindingNavigatorDeleteItem.Text = "Eliminar";
             // 
             // bindingNavigatorMoveFirstItem
             // 
@@ -181,6 +224,7 @@
             // 
             this.bindingNavigatorPositionItem.AccessibleName = "Posición";
             this.bindingNavigatorPositionItem.AutoSize = false;
+            this.bindingNavigatorPositionItem.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.bindingNavigatorPositionItem.Name = "bindingNavigatorPositionItem";
             this.bindingNavigatorPositionItem.Size = new System.Drawing.Size(50, 23);
             this.bindingNavigatorPositionItem.Text = "0";
@@ -213,6 +257,16 @@
             // 
             this.bindingNavigatorSeparator2.Name = "bindingNavigatorSeparator2";
             this.bindingNavigatorSeparator2.Size = new System.Drawing.Size(6, 25);
+            // 
+            // bindingNavigatorDeleteItem
+            // 
+            this.bindingNavigatorDeleteItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.bindingNavigatorDeleteItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorDeleteItem.Image")));
+            this.bindingNavigatorDeleteItem.Name = "bindingNavigatorDeleteItem";
+            this.bindingNavigatorDeleteItem.RightToLeftAutoMirrorImage = true;
+            this.bindingNavigatorDeleteItem.Size = new System.Drawing.Size(23, 22);
+            this.bindingNavigatorDeleteItem.Text = "Eliminar";
+            this.bindingNavigatorDeleteItem.Click += new System.EventHandler(this.bindingNavigatorDeleteItem_Click);
             // 
             // medicosBindingNavigatorSaveItem
             // 
@@ -247,26 +301,6 @@
             this.txtApellMed.Size = new System.Drawing.Size(121, 23);
             this.txtApellMed.TabIndex = 6;
             // 
-            // lblMovil
-            // 
-            lblMovil.AutoSize = true;
-            lblMovil.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Bold);
-            lblMovil.Location = new System.Drawing.Point(144, 146);
-            lblMovil.Name = "lblMovil";
-            lblMovil.Size = new System.Drawing.Size(47, 18);
-            lblMovil.TabIndex = 7;
-            lblMovil.Text = "movil:";
-            // 
-            // lblApellMed
-            // 
-            lblApellMed.AutoSize = true;
-            lblApellMed.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Bold);
-            lblApellMed.Location = new System.Drawing.Point(144, 120);
-            lblApellMed.Name = "lblApellMed";
-            lblApellMed.Size = new System.Drawing.Size(69, 18);
-            lblApellMed.TabIndex = 5;
-            lblApellMed.Text = "apellidos:";
-            // 
             // txtMovilMed
             // 
             this.txtMovilMed.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(179)))), ((int)(((byte)(229)))), ((int)(((byte)(252)))));
@@ -287,32 +321,13 @@
             this.txtNomMed.Size = new System.Drawing.Size(121, 23);
             this.txtNomMed.TabIndex = 4;
             // 
-            // lblEspeMed
-            // 
-            lblEspeMed.AutoSize = true;
-            lblEspeMed.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Bold);
-            lblEspeMed.Location = new System.Drawing.Point(144, 172);
-            lblEspeMed.Name = "lblEspeMed";
-            lblEspeMed.Size = new System.Drawing.Size(90, 18);
-            lblEspeMed.TabIndex = 9;
-            lblEspeMed.Text = "especialidad:";
-            // 
-            // lblNomMed
-            // 
-            lblNomMed.AutoSize = true;
-            lblNomMed.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Bold);
-            lblNomMed.Location = new System.Drawing.Point(144, 94);
-            lblNomMed.Name = "lblNomMed";
-            lblNomMed.Size = new System.Drawing.Size(61, 18);
-            lblNomMed.TabIndex = 3;
-            lblNomMed.Text = "nombre:";
-            // 
             // cmbbEspeMed
             // 
             this.cmbbEspeMed.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(179)))), ((int)(((byte)(229)))), ((int)(((byte)(252)))));
             this.cmbbEspeMed.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.medicosBindingSource, "especialidad", true));
             this.cmbbEspeMed.DataSource = this.especialidadesBindingSource;
             this.cmbbEspeMed.DisplayMember = "especialidad";
+            this.cmbbEspeMed.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbbEspeMed.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Bold);
             this.cmbbEspeMed.FormattingEnabled = true;
             this.cmbbEspeMed.Location = new System.Drawing.Point(240, 171);
@@ -329,16 +344,6 @@
             this.lblNoIDMed.Size = new System.Drawing.Size(121, 23);
             this.lblNoIDMed.TabIndex = 2;
             this.lblNoIDMed.Text = "label1";
-            // 
-            // lblIDMed
-            // 
-            lblIDMed.AutoSize = true;
-            lblIDMed.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Bold);
-            lblIDMed.Location = new System.Drawing.Point(144, 65);
-            lblIDMed.Name = "lblIDMed";
-            lblIDMed.Size = new System.Drawing.Size(70, 18);
-            lblIDMed.TabIndex = 1;
-            lblIDMed.Text = "idmedico:";
             // 
             // lblMedico
             // 
