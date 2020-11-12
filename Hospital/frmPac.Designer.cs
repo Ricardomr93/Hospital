@@ -29,33 +29,33 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmPac));
             System.Windows.Forms.Label lblIDPac;
             System.Windows.Forms.Label lblNomPac;
             System.Windows.Forms.Label lblApellPac;
             System.Windows.Forms.Label lblLocPac;
             System.Windows.Forms.Label lblAlerPac;
             System.Windows.Forms.Label lblAdesPac;
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmPac));
             this.hospitalDs = new Hospital.hospitalDs();
             this.pacientesBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.pacientesTableAdapter = new Hospital.hospitalDsTableAdapters.pacientesTableAdapter();
             this.tableAdapterManager = new Hospital.hospitalDsTableAdapters.TableAdapterManager();
             this.pacientesBindingNavigator = new System.Windows.Forms.BindingNavigator(this.components);
+            this.bindingNavigatorAddNewItem = new System.Windows.Forms.ToolStripButton();
+            this.bindingNavigatorCountItem = new System.Windows.Forms.ToolStripLabel();
+            this.bindingNavigatorDeleteItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorMoveFirstItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorMovePreviousItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorSeparator = new System.Windows.Forms.ToolStripSeparator();
             this.bindingNavigatorPositionItem = new System.Windows.Forms.ToolStripTextBox();
-            this.bindingNavigatorCountItem = new System.Windows.Forms.ToolStripLabel();
             this.bindingNavigatorSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.bindingNavigatorMoveNextItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorMoveLastItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorSeparator2 = new System.Windows.Forms.ToolStripSeparator();
-            this.bindingNavigatorAddNewItem = new System.Windows.Forms.ToolStripButton();
-            this.bindingNavigatorDeleteItem = new System.Windows.Forms.ToolStripButton();
             this.pacientesBindingNavigatorSaveItem = new System.Windows.Forms.ToolStripButton();
             this.lblNoIDPac = new System.Windows.Forms.Label();
-            this.txtNomPac = new System.Windows.Forms.TextBox();
             this.txtApellPac = new System.Windows.Forms.TextBox();
+            this.txtNomPac = new System.Windows.Forms.TextBox();
             this.txtLocPac = new System.Windows.Forms.TextBox();
             this.txtAlePac = new System.Windows.Forms.TextBox();
             this.txtAdesPac = new System.Windows.Forms.TextBox();
@@ -70,6 +70,66 @@
             ((System.ComponentModel.ISupportInitialize)(this.pacientesBindingNavigator)).BeginInit();
             this.pacientesBindingNavigator.SuspendLayout();
             this.SuspendLayout();
+            // 
+            // lblIDPac
+            // 
+            lblIDPac.AutoSize = true;
+            lblIDPac.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Bold);
+            lblIDPac.Location = new System.Drawing.Point(50, 36);
+            lblIDPac.Name = "lblIDPac";
+            lblIDPac.Size = new System.Drawing.Size(78, 18);
+            lblIDPac.TabIndex = 1;
+            lblIDPac.Text = "idpaciente:";
+            // 
+            // lblNomPac
+            // 
+            lblNomPac.AutoSize = true;
+            lblNomPac.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Bold);
+            lblNomPac.Location = new System.Drawing.Point(50, 92);
+            lblNomPac.Name = "lblNomPac";
+            lblNomPac.Size = new System.Drawing.Size(61, 18);
+            lblNomPac.TabIndex = 3;
+            lblNomPac.Text = "nombre:";
+            // 
+            // lblApellPac
+            // 
+            lblApellPac.AutoSize = true;
+            lblApellPac.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Bold);
+            lblApellPac.Location = new System.Drawing.Point(50, 63);
+            lblApellPac.Name = "lblApellPac";
+            lblApellPac.Size = new System.Drawing.Size(69, 18);
+            lblApellPac.TabIndex = 5;
+            lblApellPac.Text = "apellidos:";
+            // 
+            // lblLocPac
+            // 
+            lblLocPac.AutoSize = true;
+            lblLocPac.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Bold);
+            lblLocPac.Location = new System.Drawing.Point(50, 120);
+            lblLocPac.Name = "lblLocPac";
+            lblLocPac.Size = new System.Drawing.Size(68, 18);
+            lblLocPac.TabIndex = 7;
+            lblLocPac.Text = "localidad:";
+            // 
+            // lblAlerPac
+            // 
+            lblAlerPac.AutoSize = true;
+            lblAlerPac.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Bold);
+            lblAlerPac.Location = new System.Drawing.Point(50, 148);
+            lblAlerPac.Name = "lblAlerPac";
+            lblAlerPac.Size = new System.Drawing.Size(60, 18);
+            lblAlerPac.TabIndex = 9;
+            lblAlerPac.Text = "alergias:";
+            // 
+            // lblAdesPac
+            // 
+            lblAdesPac.AutoSize = true;
+            lblAdesPac.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Bold);
+            lblAdesPac.Location = new System.Drawing.Point(50, 196);
+            lblAdesPac.Name = "lblAdesPac";
+            lblAdesPac.Size = new System.Drawing.Size(71, 18);
+            lblAdesPac.TabIndex = 11;
+            lblAdesPac.Text = "adestacar:";
             // 
             // hospitalDs
             // 
@@ -125,6 +185,32 @@
             this.pacientesBindingNavigator.TabIndex = 0;
             this.pacientesBindingNavigator.Text = "bindingNavigator1";
             // 
+            // bindingNavigatorAddNewItem
+            // 
+            this.bindingNavigatorAddNewItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.bindingNavigatorAddNewItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorAddNewItem.Image")));
+            this.bindingNavigatorAddNewItem.Name = "bindingNavigatorAddNewItem";
+            this.bindingNavigatorAddNewItem.RightToLeftAutoMirrorImage = true;
+            this.bindingNavigatorAddNewItem.Size = new System.Drawing.Size(23, 22);
+            this.bindingNavigatorAddNewItem.Text = "Agregar nuevo";
+            this.bindingNavigatorAddNewItem.Click += new System.EventHandler(this.bindingNavigatorAddNewItem_Click);
+            // 
+            // bindingNavigatorCountItem
+            // 
+            this.bindingNavigatorCountItem.Name = "bindingNavigatorCountItem";
+            this.bindingNavigatorCountItem.Size = new System.Drawing.Size(37, 22);
+            this.bindingNavigatorCountItem.Text = "de {0}";
+            this.bindingNavigatorCountItem.ToolTipText = "Número total de elementos";
+            // 
+            // bindingNavigatorDeleteItem
+            // 
+            this.bindingNavigatorDeleteItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.bindingNavigatorDeleteItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorDeleteItem.Image")));
+            this.bindingNavigatorDeleteItem.Name = "bindingNavigatorDeleteItem";
+            this.bindingNavigatorDeleteItem.RightToLeftAutoMirrorImage = true;
+            this.bindingNavigatorDeleteItem.Size = new System.Drawing.Size(23, 22);
+            this.bindingNavigatorDeleteItem.Text = "Eliminar";
+            // 
             // bindingNavigatorMoveFirstItem
             // 
             this.bindingNavigatorMoveFirstItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
@@ -158,16 +244,9 @@
             this.bindingNavigatorPositionItem.Text = "0";
             this.bindingNavigatorPositionItem.ToolTipText = "Posición actual";
             // 
-            // bindingNavigatorCountItem
-            // 
-            this.bindingNavigatorCountItem.Name = "bindingNavigatorCountItem";
-            this.bindingNavigatorCountItem.Size = new System.Drawing.Size(37, 22);
-            this.bindingNavigatorCountItem.Text = "de {0}";
-            this.bindingNavigatorCountItem.ToolTipText = "Número total de elementos";
-            // 
             // bindingNavigatorSeparator1
             // 
-            this.bindingNavigatorSeparator1.Name = "bindingNavigatorSeparator";
+            this.bindingNavigatorSeparator1.Name = "bindingNavigatorSeparator1";
             this.bindingNavigatorSeparator1.Size = new System.Drawing.Size(6, 25);
             // 
             // bindingNavigatorMoveNextItem
@@ -190,27 +269,8 @@
             // 
             // bindingNavigatorSeparator2
             // 
-            this.bindingNavigatorSeparator2.Name = "bindingNavigatorSeparator";
+            this.bindingNavigatorSeparator2.Name = "bindingNavigatorSeparator2";
             this.bindingNavigatorSeparator2.Size = new System.Drawing.Size(6, 25);
-            // 
-            // bindingNavigatorAddNewItem
-            // 
-            this.bindingNavigatorAddNewItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.bindingNavigatorAddNewItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorAddNewItem.Image")));
-            this.bindingNavigatorAddNewItem.Name = "bindingNavigatorAddNewItem";
-            this.bindingNavigatorAddNewItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorAddNewItem.Size = new System.Drawing.Size(23, 22);
-            this.bindingNavigatorAddNewItem.Text = "Agregar nuevo";
-            this.bindingNavigatorAddNewItem.Click += new System.EventHandler(this.bindingNavigatorAddNewItem_Click);
-            // 
-            // bindingNavigatorDeleteItem
-            // 
-            this.bindingNavigatorDeleteItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.bindingNavigatorDeleteItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorDeleteItem.Image")));
-            this.bindingNavigatorDeleteItem.Name = "bindingNavigatorDeleteItem";
-            this.bindingNavigatorDeleteItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorDeleteItem.Size = new System.Drawing.Size(23, 22);
-            this.bindingNavigatorDeleteItem.Text = "Eliminar";
             // 
             // pacientesBindingNavigatorSaveItem
             // 
@@ -220,16 +280,6 @@
             this.pacientesBindingNavigatorSaveItem.Size = new System.Drawing.Size(23, 22);
             this.pacientesBindingNavigatorSaveItem.Text = "Guardar datos";
             this.pacientesBindingNavigatorSaveItem.Click += new System.EventHandler(this.pacientesBindingNavigatorSaveItem_Click);
-            // 
-            // lblIDPac
-            // 
-            lblIDPac.AutoSize = true;
-            lblIDPac.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Bold);
-            lblIDPac.Location = new System.Drawing.Point(50, 36);
-            lblIDPac.Name = "lblIDPac";
-            lblIDPac.Size = new System.Drawing.Size(78, 18);
-            lblIDPac.TabIndex = 1;
-            lblIDPac.Text = "idpaciente:";
             // 
             // lblNoIDPac
             // 
@@ -241,55 +291,25 @@
             this.lblNoIDPac.TabIndex = 2;
             this.lblNoIDPac.Text = "label1";
             // 
-            // lblNomPac
+            // txtApellPac
             // 
-            lblNomPac.AutoSize = true;
-            lblNomPac.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Bold);
-            lblNomPac.Location = new System.Drawing.Point(50, 92);
-            lblNomPac.Name = "lblNomPac";
-            lblNomPac.Size = new System.Drawing.Size(61, 18);
-            lblNomPac.TabIndex = 3;
-            lblNomPac.Text = "nombre:";
+            this.txtApellPac.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(179)))), ((int)(((byte)(229)))), ((int)(((byte)(252)))));
+            this.txtApellPac.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.pacientesBindingSource, "nombre", true));
+            this.txtApellPac.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Bold);
+            this.txtApellPac.Location = new System.Drawing.Point(147, 62);
+            this.txtApellPac.Name = "txtApellPac";
+            this.txtApellPac.Size = new System.Drawing.Size(189, 23);
+            this.txtApellPac.TabIndex = 4;
             // 
             // txtNomPac
             // 
             this.txtNomPac.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(179)))), ((int)(((byte)(229)))), ((int)(((byte)(252)))));
-            this.txtNomPac.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.pacientesBindingSource, "nombre", true));
+            this.txtNomPac.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.pacientesBindingSource, "apellidos", true));
             this.txtNomPac.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Bold);
-            this.txtNomPac.Location = new System.Drawing.Point(147, 62);
+            this.txtNomPac.Location = new System.Drawing.Point(147, 91);
             this.txtNomPac.Name = "txtNomPac";
             this.txtNomPac.Size = new System.Drawing.Size(189, 23);
-            this.txtNomPac.TabIndex = 4;
-            // 
-            // lblApellPac
-            // 
-            lblApellPac.AutoSize = true;
-            lblApellPac.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Bold);
-            lblApellPac.Location = new System.Drawing.Point(50, 63);
-            lblApellPac.Name = "lblApellPac";
-            lblApellPac.Size = new System.Drawing.Size(69, 18);
-            lblApellPac.TabIndex = 5;
-            lblApellPac.Text = "apellidos:";
-            // 
-            // txtApellPac
-            // 
-            this.txtApellPac.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(179)))), ((int)(((byte)(229)))), ((int)(((byte)(252)))));
-            this.txtApellPac.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.pacientesBindingSource, "apellidos", true));
-            this.txtApellPac.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Bold);
-            this.txtApellPac.Location = new System.Drawing.Point(147, 91);
-            this.txtApellPac.Name = "txtApellPac";
-            this.txtApellPac.Size = new System.Drawing.Size(189, 23);
-            this.txtApellPac.TabIndex = 6;
-            // 
-            // lblLocPac
-            // 
-            lblLocPac.AutoSize = true;
-            lblLocPac.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Bold);
-            lblLocPac.Location = new System.Drawing.Point(50, 120);
-            lblLocPac.Name = "lblLocPac";
-            lblLocPac.Size = new System.Drawing.Size(68, 18);
-            lblLocPac.TabIndex = 7;
-            lblLocPac.Text = "localidad:";
+            this.txtNomPac.TabIndex = 6;
             // 
             // txtLocPac
             // 
@@ -301,16 +321,6 @@
             this.txtLocPac.Size = new System.Drawing.Size(189, 23);
             this.txtLocPac.TabIndex = 8;
             // 
-            // lblAlerPac
-            // 
-            lblAlerPac.AutoSize = true;
-            lblAlerPac.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Bold);
-            lblAlerPac.Location = new System.Drawing.Point(50, 148);
-            lblAlerPac.Name = "lblAlerPac";
-            lblAlerPac.Size = new System.Drawing.Size(60, 18);
-            lblAlerPac.TabIndex = 9;
-            lblAlerPac.Text = "alergias:";
-            // 
             // txtAlePac
             // 
             this.txtAlePac.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(179)))), ((int)(((byte)(229)))), ((int)(((byte)(252)))));
@@ -321,16 +331,6 @@
             this.txtAlePac.Name = "txtAlePac";
             this.txtAlePac.Size = new System.Drawing.Size(189, 42);
             this.txtAlePac.TabIndex = 10;
-            // 
-            // lblAdesPac
-            // 
-            lblAdesPac.AutoSize = true;
-            lblAdesPac.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Bold);
-            lblAdesPac.Location = new System.Drawing.Point(50, 196);
-            lblAdesPac.Name = "lblAdesPac";
-            lblAdesPac.Size = new System.Drawing.Size(71, 18);
-            lblAdesPac.TabIndex = 11;
-            lblAdesPac.Text = "adestacar:";
             // 
             // txtAdesPac
             // 
@@ -352,9 +352,9 @@
             this.Controls.Add(lblIDPac);
             this.Controls.Add(this.lblNoIDPac);
             this.Controls.Add(lblNomPac);
-            this.Controls.Add(this.txtNomPac);
-            this.Controls.Add(lblApellPac);
             this.Controls.Add(this.txtApellPac);
+            this.Controls.Add(lblApellPac);
+            this.Controls.Add(this.txtNomPac);
             this.Controls.Add(lblLocPac);
             this.Controls.Add(this.txtLocPac);
             this.Controls.Add(lblAlerPac);
@@ -396,8 +396,8 @@
         private System.Windows.Forms.ToolStripSeparator bindingNavigatorSeparator2;
         private System.Windows.Forms.ToolStripButton pacientesBindingNavigatorSaveItem;
         private System.Windows.Forms.Label lblNoIDPac;
-        private System.Windows.Forms.TextBox txtNomPac;
         private System.Windows.Forms.TextBox txtApellPac;
+        private System.Windows.Forms.TextBox txtNomPac;
         private System.Windows.Forms.TextBox txtLocPac;
         private System.Windows.Forms.TextBox txtAlePac;
         private System.Windows.Forms.TextBox txtAdesPac;
