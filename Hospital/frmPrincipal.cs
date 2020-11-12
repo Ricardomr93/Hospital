@@ -234,5 +234,11 @@ namespace Hospital
             cmbbPacAten.Items.Clear();
             cargarcmbbEspe();
         }
+
+        private void btnHisto_Click(object sender, EventArgs e)
+        {
+            frmHistorial fh = new frmHistorial();
+            fh.ShowDialog();
+        }
     }
 }

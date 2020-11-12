@@ -402,6 +402,7 @@
             this.Controls.Add(this.txtMovilMed);
             this.Controls.Add(lblEspeMed);
             this.Controls.Add(this.txtNomMed);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "frmMed";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Gestión de Medicos";

@@ -5736,7 +5736,7 @@ namespace Hospital.hospitalDsTableAdapters {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         private void InitCommandCollection() {
-            this._commandCollection = new global::MySql.Data.MySqlClient.MySqlCommand[3];
+            this._commandCollection = new global::MySql.Data.MySqlClient.MySqlCommand[4];
             this._commandCollection[0] = new global::MySql.Data.MySqlClient.MySqlCommand();
             this._commandCollection[0].Connection = this.Connection;
             this._commandCollection[0].CommandText = @"SELECT        atencsmedicas.idatenc, atencsmedicas.fecha, pacientes.nombre, pacientes.apellidos, atencsmedicas.diagnostico, medicos.idmedico, medicos.especialidad, pacientes.idpaciente, atencsmedicas.medico, 
@@ -5780,6 +5780,23 @@ ORDER BY atencsmedicas.fecha DESC";
             param.SourceColumn = "idmedico";
             param.SourceVersion = global::System.Data.DataRowVersion.Current;
             this._commandCollection[2].Parameters.Add(param);
+            this._commandCollection[3] = new global::MySql.Data.MySqlClient.MySqlCommand();
+            this._commandCollection[3].Connection = this.Connection;
+            this._commandCollection[3].CommandText = @"SELECT        atencsmedicas.idatenc, atencsmedicas.fecha, pacientes.nombre, pacientes.apellidos, atencsmedicas.diagnostico, medicos.idmedico, medicos.especialidad, pacientes.idpaciente, atencsmedicas.medico, 
+                         atencsmedicas.paciente, pacientes.localidad, pacientes.adestacar, pacientes.alergias, medicos.nombre AS Expr1, medicos.apellidos AS Expr2, medicos.movil, medicos.foto
+FROM            atencsmedicas INNER JOIN
+                         medicos ON atencsmedicas.medico = medicos.idmedico INNER JOIN
+                         pacientes ON atencsmedicas.paciente = pacientes.idpaciente
+WHERE (pacientes.idpaciente = ?)";
+            this._commandCollection[3].CommandType = global::System.Data.CommandType.Text;
+            param = new global::MySql.Data.MySqlClient.MySqlParameter();
+            param.ParameterName = "@Param1";
+            param.DbType = global::System.Data.DbType.Int32;
+            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Int32;
+            param.IsNullable = true;
+            param.SourceColumn = "idpaciente";
+            param.SourceVersion = global::System.Data.DataRowVersion.Current;
+            this._commandCollection[3].Parameters.Add(param);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -5863,6 +5880,32 @@ ORDER BY atencsmedicas.fecha DESC";
         public virtual hospitalDs.atenmedpacDataTable GetDataByIDMed(int Param2) {
             this.Adapter.SelectCommand = this.CommandCollection[2];
             this.Adapter.SelectCommand.Parameters[0].Value = ((int)(Param2));
+            hospitalDs.atenmedpacDataTable dataTable = new hospitalDs.atenmedpacDataTable();
+            this.Adapter.Fill(dataTable);
+            return dataTable;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, false)]
+        public virtual int FillByIDPac(hospitalDs.atenmedpacDataTable dataTable, int Param1) {
+            this.Adapter.SelectCommand = this.CommandCollection[3];
+            this.Adapter.SelectCommand.Parameters[0].Value = ((int)(Param1));
+            if ((this.ClearBeforeFill == true)) {
+                dataTable.Clear();
+            }
+            int returnValue = this.Adapter.Fill(dataTable);
+            return returnValue;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, false)]
+        public virtual hospitalDs.atenmedpacDataTable GetDataByIDPac(int Param1) {
+            this.Adapter.SelectCommand = this.CommandCollection[3];
+            this.Adapter.SelectCommand.Parameters[0].Value = ((int)(Param1));
             hospitalDs.atenmedpacDataTable dataTable = new hospitalDs.atenmedpacDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;

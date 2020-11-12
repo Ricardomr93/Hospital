@@ -362,6 +362,7 @@
             this.Controls.Add(lblAdesPac);
             this.Controls.Add(this.txtAdesPac);
             this.Controls.Add(this.pacientesBindingNavigator);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "frmPac";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "frmPac";
