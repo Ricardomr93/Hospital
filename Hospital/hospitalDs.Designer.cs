@@ -1704,13 +1704,17 @@ namespace Hospital {
             
             private global::System.Data.DataColumn columnfecha;
             
-            private global::System.Data.DataColumn columnnombre;
-            
-            private global::System.Data.DataColumn columnExpr1;
-            
             private global::System.Data.DataColumn columnapellidos;
             
             private global::System.Data.DataColumn columndiagnostico;
+            
+            private global::System.Data.DataColumn columnnombre;
+            
+            private global::System.Data.DataColumn columnidmedico;
+            
+            private global::System.Data.DataColumn columnespecialidad;
+            
+            private global::System.Data.DataColumn columnidpaciente;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
@@ -1763,22 +1767,6 @@ namespace Hospital {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public global::System.Data.DataColumn nombreColumn {
-                get {
-                    return this.columnnombre;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public global::System.Data.DataColumn Expr1Column {
-                get {
-                    return this.columnExpr1;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public global::System.Data.DataColumn apellidosColumn {
                 get {
                     return this.columnapellidos;
@@ -1790,6 +1778,38 @@ namespace Hospital {
             public global::System.Data.DataColumn diagnosticoColumn {
                 get {
                     return this.columndiagnostico;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn nombreColumn {
+                get {
+                    return this.columnnombre;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn idmedicoColumn {
+                get {
+                    return this.columnidmedico;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn especialidadColumn {
+                get {
+                    return this.columnespecialidad;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn idpacienteColumn {
+                get {
+                    return this.columnidpaciente;
                 }
             }
             
@@ -1830,15 +1850,17 @@ namespace Hospital {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public atenmedpacRow AddatenmedpacRow(System.DateTime fecha, string nombre, string Expr1, string apellidos, string diagnostico) {
+            public atenmedpacRow AddatenmedpacRow(System.DateTime fecha, string apellidos, string diagnostico, string nombre, string especialidad) {
                 atenmedpacRow rowatenmedpacRow = ((atenmedpacRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         null,
                         fecha,
-                        nombre,
-                        Expr1,
                         apellidos,
-                        diagnostico};
+                        diagnostico,
+                        nombre,
+                        null,
+                        especialidad,
+                        null};
                 rowatenmedpacRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowatenmedpacRow);
                 return rowatenmedpacRow;
@@ -1870,10 +1892,12 @@ namespace Hospital {
             internal void InitVars() {
                 this.columnidatenc = base.Columns["idatenc"];
                 this.columnfecha = base.Columns["fecha"];
-                this.columnnombre = base.Columns["nombre"];
-                this.columnExpr1 = base.Columns["Expr1"];
                 this.columnapellidos = base.Columns["apellidos"];
                 this.columndiagnostico = base.Columns["diagnostico"];
+                this.columnnombre = base.Columns["nombre"];
+                this.columnidmedico = base.Columns["idmedico"];
+                this.columnespecialidad = base.Columns["especialidad"];
+                this.columnidpaciente = base.Columns["idpaciente"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -1883,14 +1907,18 @@ namespace Hospital {
                 base.Columns.Add(this.columnidatenc);
                 this.columnfecha = new global::System.Data.DataColumn("fecha", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnfecha);
-                this.columnnombre = new global::System.Data.DataColumn("nombre", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnnombre);
-                this.columnExpr1 = new global::System.Data.DataColumn("Expr1", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnExpr1);
                 this.columnapellidos = new global::System.Data.DataColumn("apellidos", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnapellidos);
                 this.columndiagnostico = new global::System.Data.DataColumn("diagnostico", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columndiagnostico);
+                this.columnnombre = new global::System.Data.DataColumn("nombre", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnnombre);
+                this.columnidmedico = new global::System.Data.DataColumn("idmedico", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnidmedico);
+                this.columnespecialidad = new global::System.Data.DataColumn("especialidad", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnespecialidad);
+                this.columnidpaciente = new global::System.Data.DataColumn("idpaciente", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnidpaciente);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
                                 this.columnidatenc}, true));
                 this.columnidatenc.AutoIncrement = true;
@@ -1898,10 +1926,18 @@ namespace Hospital {
                 this.columnidatenc.AutoIncrementStep = -1;
                 this.columnidatenc.AllowDBNull = false;
                 this.columnidatenc.Unique = true;
-                this.columnnombre.MaxLength = 80;
-                this.columnExpr1.MaxLength = 80;
                 this.columnapellidos.MaxLength = 200;
                 this.columndiagnostico.MaxLength = 200;
+                this.columnidmedico.AutoIncrement = true;
+                this.columnidmedico.AutoIncrementSeed = -1;
+                this.columnidmedico.AutoIncrementStep = -1;
+                this.columnidmedico.AllowDBNull = false;
+                this.columnespecialidad.AllowDBNull = false;
+                this.columnespecialidad.MaxLength = 100;
+                this.columnidpaciente.AutoIncrement = true;
+                this.columnidpaciente.AutoIncrementSeed = -1;
+                this.columnidpaciente.AutoIncrementStep = -1;
+                this.columnidpaciente.AllowDBNull = false;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -2582,38 +2618,6 @@ namespace Hospital {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public string nombre {
-                get {
-                    try {
-                        return ((string)(this[this.tableatenmedpac.nombreColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("El valor de la columna \'nombre\' de la tabla \'atenmedpac\' es DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tableatenmedpac.nombreColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public string Expr1 {
-                get {
-                    try {
-                        return ((string)(this[this.tableatenmedpac.Expr1Column]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("El valor de la columna \'Expr1\' de la tabla \'atenmedpac\' es DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tableatenmedpac.Expr1Column] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public string apellidos {
                 get {
                     try {
@@ -2646,6 +2650,55 @@ namespace Hospital {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public string nombre {
+                get {
+                    try {
+                        return ((string)(this[this.tableatenmedpac.nombreColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'nombre\' de la tabla \'atenmedpac\' es DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableatenmedpac.nombreColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public int idmedico {
+                get {
+                    return ((int)(this[this.tableatenmedpac.idmedicoColumn]));
+                }
+                set {
+                    this[this.tableatenmedpac.idmedicoColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public string especialidad {
+                get {
+                    return ((string)(this[this.tableatenmedpac.especialidadColumn]));
+                }
+                set {
+                    this[this.tableatenmedpac.especialidadColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public int idpaciente {
+                get {
+                    return ((int)(this[this.tableatenmedpac.idpacienteColumn]));
+                }
+                set {
+                    this[this.tableatenmedpac.idpacienteColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public bool IsfechaNull() {
                 return this.IsNull(this.tableatenmedpac.fechaColumn);
             }
@@ -2654,30 +2707,6 @@ namespace Hospital {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public void SetfechaNull() {
                 this[this.tableatenmedpac.fechaColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public bool IsnombreNull() {
-                return this.IsNull(this.tableatenmedpac.nombreColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public void SetnombreNull() {
-                this[this.tableatenmedpac.nombreColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public bool IsExpr1Null() {
-                return this.IsNull(this.tableatenmedpac.Expr1Column);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public void SetExpr1Null() {
-                this[this.tableatenmedpac.Expr1Column] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -2702,6 +2731,18 @@ namespace Hospital {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public void SetdiagnosticoNull() {
                 this[this.tableatenmedpac.diagnosticoColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool IsnombreNull() {
+                return this.IsNull(this.tableatenmedpac.nombreColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void SetnombreNull() {
+                this[this.tableatenmedpac.nombreColumn] = global::System.Convert.DBNull;
             }
         }
         
@@ -3584,7 +3625,7 @@ namespace Hospital.hospitalDsTableAdapters {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         private void InitCommandCollection() {
-            this._commandCollection = new global::MySql.Data.MySqlClient.MySqlCommand[2];
+            this._commandCollection = new global::MySql.Data.MySqlClient.MySqlCommand[4];
             this._commandCollection[0] = new global::MySql.Data.MySqlClient.MySqlCommand();
             this._commandCollection[0].Connection = this.Connection;
             this._commandCollection[0].CommandText = "SELECT `idmedico`, `nombre`, `apellidos`, `movil`, `especialidad`, `foto` FROM `m" +
@@ -3592,10 +3633,37 @@ namespace Hospital.hospitalDsTableAdapters {
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[1] = new global::MySql.Data.MySqlClient.MySqlCommand();
             this._commandCollection[1].Connection = this.Connection;
-            this._commandCollection[1].CommandText = "SELECT        idmedico, nombre, apellidos, movil, especialidad, foto\r\nFROM       " +
-                "     medicos\r\nWHERE        (nombre = @Param1)";
+            this._commandCollection[1].CommandText = "SELECT        nombre, idmedico, especialidad\r\nFROM            medicos\r\nWHERE     " +
+                "   (especialidad = @Param1)";
             this._commandCollection[1].CommandType = global::System.Data.CommandType.Text;
             global::MySql.Data.MySqlClient.MySqlParameter param = new global::MySql.Data.MySqlClient.MySqlParameter();
+            param.ParameterName = "@Param1";
+            param.DbType = global::System.Data.DbType.String;
+            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.VarChar;
+            param.Size = 100;
+            param.IsNullable = true;
+            param.SourceColumn = "especialidad";
+            param.SourceVersion = global::System.Data.DataRowVersion.Current;
+            this._commandCollection[1].Parameters.Add(param);
+            this._commandCollection[2] = new global::MySql.Data.MySqlClient.MySqlCommand();
+            this._commandCollection[2].Connection = this.Connection;
+            this._commandCollection[2].CommandText = "SELECT        idmedico, nombre, apellidos, movil, especialidad, foto\r\nFROM       " +
+                "     medicos\r\nWHERE        (idmedico = @Param1)";
+            this._commandCollection[2].CommandType = global::System.Data.CommandType.Text;
+            param = new global::MySql.Data.MySqlClient.MySqlParameter();
+            param.ParameterName = "@Param1";
+            param.DbType = global::System.Data.DbType.Int32;
+            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Int32;
+            param.IsNullable = true;
+            param.SourceColumn = "idmedico";
+            param.SourceVersion = global::System.Data.DataRowVersion.Current;
+            this._commandCollection[2].Parameters.Add(param);
+            this._commandCollection[3] = new global::MySql.Data.MySqlClient.MySqlCommand();
+            this._commandCollection[3].Connection = this.Connection;
+            this._commandCollection[3].CommandText = "SELECT        idmedico, nombre, apellidos, movil, especialidad, foto\r\nFROM       " +
+                "     medicos\r\nWHERE        (nombre = @Param1)";
+            this._commandCollection[3].CommandType = global::System.Data.CommandType.Text;
+            param = new global::MySql.Data.MySqlClient.MySqlParameter();
             param.ParameterName = "@Param1";
             param.DbType = global::System.Data.DbType.String;
             param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.VarChar;
@@ -3603,7 +3671,7 @@ namespace Hospital.hospitalDsTableAdapters {
             param.IsNullable = true;
             param.SourceColumn = "nombre";
             param.SourceVersion = global::System.Data.DataRowVersion.Current;
-            this._commandCollection[1].Parameters.Add(param);
+            this._commandCollection[3].Parameters.Add(param);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -3634,8 +3702,70 @@ namespace Hospital.hospitalDsTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, false)]
-        public virtual int FillByNombreMed(hospitalDs.medicosDataTable dataTable, string Param1) {
+        public virtual int FillByEspecialidad(hospitalDs.medicosDataTable dataTable, string Param1) {
             this.Adapter.SelectCommand = this.CommandCollection[1];
+            if ((Param1 == null)) {
+                throw new global::System.ArgumentNullException("Param1");
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[0].Value = ((string)(Param1));
+            }
+            if ((this.ClearBeforeFill == true)) {
+                dataTable.Clear();
+            }
+            int returnValue = this.Adapter.Fill(dataTable);
+            return returnValue;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, false)]
+        public virtual hospitalDs.medicosDataTable GetDataByEspecialidad(string Param1) {
+            this.Adapter.SelectCommand = this.CommandCollection[1];
+            if ((Param1 == null)) {
+                throw new global::System.ArgumentNullException("Param1");
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[0].Value = ((string)(Param1));
+            }
+            hospitalDs.medicosDataTable dataTable = new hospitalDs.medicosDataTable();
+            this.Adapter.Fill(dataTable);
+            return dataTable;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, false)]
+        public virtual int FillByIDMed(hospitalDs.medicosDataTable dataTable, int Param1) {
+            this.Adapter.SelectCommand = this.CommandCollection[2];
+            this.Adapter.SelectCommand.Parameters[0].Value = ((int)(Param1));
+            if ((this.ClearBeforeFill == true)) {
+                dataTable.Clear();
+            }
+            int returnValue = this.Adapter.Fill(dataTable);
+            return returnValue;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, false)]
+        public virtual hospitalDs.medicosDataTable GetDataByIDMed(int Param1) {
+            this.Adapter.SelectCommand = this.CommandCollection[2];
+            this.Adapter.SelectCommand.Parameters[0].Value = ((int)(Param1));
+            hospitalDs.medicosDataTable dataTable = new hospitalDs.medicosDataTable();
+            this.Adapter.Fill(dataTable);
+            return dataTable;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, false)]
+        public virtual int FillByNombreMed(hospitalDs.medicosDataTable dataTable, string Param1) {
+            this.Adapter.SelectCommand = this.CommandCollection[3];
             if ((Param1 == null)) {
                 this.Adapter.SelectCommand.Parameters[0].Value = global::System.DBNull.Value;
             }
@@ -3654,7 +3784,7 @@ namespace Hospital.hospitalDsTableAdapters {
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, false)]
         public virtual hospitalDs.medicosDataTable GetDataByNombreMed(string Param1) {
-            this.Adapter.SelectCommand = this.CommandCollection[1];
+            this.Adapter.SelectCommand = this.CommandCollection[3];
             if ((Param1 == null)) {
                 this.Adapter.SelectCommand.Parameters[0].Value = global::System.DBNull.Value;
             }
@@ -5265,10 +5395,12 @@ namespace Hospital.hospitalDsTableAdapters {
             tableMapping.DataSetTable = "atenmedpac";
             tableMapping.ColumnMappings.Add("idatenc", "idatenc");
             tableMapping.ColumnMappings.Add("fecha", "fecha");
-            tableMapping.ColumnMappings.Add("nombre", "nombre");
-            tableMapping.ColumnMappings.Add("Expr1", "Expr1");
             tableMapping.ColumnMappings.Add("apellidos", "apellidos");
             tableMapping.ColumnMappings.Add("diagnostico", "diagnostico");
+            tableMapping.ColumnMappings.Add("nombre", "nombre");
+            tableMapping.ColumnMappings.Add("idmedico", "idmedico");
+            tableMapping.ColumnMappings.Add("especialidad", "especialidad");
+            tableMapping.ColumnMappings.Add("idpaciente", "idpaciente");
             this._adapter.TableMappings.Add(tableMapping);
         }
         
@@ -5282,32 +5414,72 @@ namespace Hospital.hospitalDsTableAdapters {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         private void InitCommandCollection() {
-            this._commandCollection = new global::MySql.Data.MySqlClient.MySqlCommand[1];
+            this._commandCollection = new global::MySql.Data.MySqlClient.MySqlCommand[3];
             this._commandCollection[0] = new global::MySql.Data.MySqlClient.MySqlCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = @"SELECT        atencsmedicas.idatenc, atencsmedicas.fecha, medicos.nombre, pacientes.nombre AS Expr1, pacientes.apellidos, atencsmedicas.diagnostico
+            this._commandCollection[0].CommandText = @"SELECT        atencsmedicas.idatenc, atencsmedicas.fecha, pacientes.nombre, pacientes.apellidos, atencsmedicas.diagnostico, medicos.idmedico, medicos.especialidad, pacientes.idpaciente
 FROM            atencsmedicas INNER JOIN
                          medicos ON atencsmedicas.medico = medicos.idmedico INNER JOIN
                          pacientes ON atencsmedicas.paciente = pacientes.idpaciente
-WHERE        (medicos.idmedico = @Param1)";
+WHERE        (medicos.nombre = @Param2)";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
             global::MySql.Data.MySqlClient.MySqlParameter param = new global::MySql.Data.MySqlClient.MySqlParameter();
-            param.ParameterName = "@Param1";
-            param.DbType = global::System.Data.DbType.Int32;
-            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Int32;
+            param.ParameterName = "@Param2";
+            param.DbType = global::System.Data.DbType.String;
+            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.VarChar;
+            param.Size = 80;
             param.IsNullable = true;
-            param.SourceColumn = "idmedico";
+            param.SourceColumn = "nombre";
             param.SourceVersion = global::System.Data.DataRowVersion.Current;
             this._commandCollection[0].Parameters.Add(param);
+            this._commandCollection[1] = new global::MySql.Data.MySqlClient.MySqlCommand();
+            this._commandCollection[1].Connection = this.Connection;
+            this._commandCollection[1].CommandText = @"SELECT        atencsmedicas.idatenc, atencsmedicas.fecha, pacientes.apellidos, atencsmedicas.diagnostico
+FROM            atencsmedicas INNER JOIN
+                         medicos ON atencsmedicas.medico = medicos.idmedico INNER JOIN
+                         pacientes ON atencsmedicas.paciente = pacientes.idpaciente
+WHERE        (medicos.nombre = @Param2)";
+            this._commandCollection[1].CommandType = global::System.Data.CommandType.Text;
+            param = new global::MySql.Data.MySqlClient.MySqlParameter();
+            param.ParameterName = "@Param2";
+            param.DbType = global::System.Data.DbType.String;
+            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.VarChar;
+            param.Size = 80;
+            param.IsNullable = true;
+            param.SourceColumn = "nombre";
+            param.SourceVersion = global::System.Data.DataRowVersion.Current;
+            this._commandCollection[1].Parameters.Add(param);
+            this._commandCollection[2] = new global::MySql.Data.MySqlClient.MySqlCommand();
+            this._commandCollection[2].Connection = this.Connection;
+            this._commandCollection[2].CommandText = @"SELECT        atencsmedicas.idatenc, pacientes.nombre, atencsmedicas.diagnostico, medicos.idmedico, pacientes.idpaciente, medicos.nombre AS Expr1
+FROM            atencsmedicas INNER JOIN
+                         medicos ON atencsmedicas.medico = medicos.idmedico INNER JOIN
+                         pacientes ON atencsmedicas.paciente = pacientes.idpaciente
+WHERE        (medicos.nombre = @Param2)";
+            this._commandCollection[2].CommandType = global::System.Data.CommandType.Text;
+            param = new global::MySql.Data.MySqlClient.MySqlParameter();
+            param.ParameterName = "@Param2";
+            param.DbType = global::System.Data.DbType.String;
+            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.VarChar;
+            param.Size = 80;
+            param.IsNullable = true;
+            param.SourceColumn = "Expr1";
+            param.SourceVersion = global::System.Data.DataRowVersion.Current;
+            this._commandCollection[2].Parameters.Add(param);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
-        public virtual int FillByIDMed(hospitalDs.atenmedpacDataTable dataTable, int Param1) {
+        public virtual int FillByNomMed(hospitalDs.atenmedpacDataTable dataTable, string Param2) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
-            this.Adapter.SelectCommand.Parameters[0].Value = ((int)(Param1));
+            if ((Param2 == null)) {
+                this.Adapter.SelectCommand.Parameters[0].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[0].Value = ((string)(Param2));
+            }
             if ((this.ClearBeforeFill == true)) {
                 dataTable.Clear();
             }
@@ -5319,9 +5491,86 @@ WHERE        (medicos.idmedico = @Param1)";
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
-        public virtual hospitalDs.atenmedpacDataTable GetDataByIDMed(int Param1) {
+        public virtual hospitalDs.atenmedpacDataTable GetDataByNomMed(string Param2) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
-            this.Adapter.SelectCommand.Parameters[0].Value = ((int)(Param1));
+            if ((Param2 == null)) {
+                this.Adapter.SelectCommand.Parameters[0].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[0].Value = ((string)(Param2));
+            }
+            hospitalDs.atenmedpacDataTable dataTable = new hospitalDs.atenmedpacDataTable();
+            this.Adapter.Fill(dataTable);
+            return dataTable;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, false)]
+        public virtual int FillBy(hospitalDs.atenmedpacDataTable dataTable, string Param2) {
+            this.Adapter.SelectCommand = this.CommandCollection[1];
+            if ((Param2 == null)) {
+                this.Adapter.SelectCommand.Parameters[0].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[0].Value = ((string)(Param2));
+            }
+            if ((this.ClearBeforeFill == true)) {
+                dataTable.Clear();
+            }
+            int returnValue = this.Adapter.Fill(dataTable);
+            return returnValue;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, false)]
+        public virtual hospitalDs.atenmedpacDataTable GetDataBy(string Param2) {
+            this.Adapter.SelectCommand = this.CommandCollection[1];
+            if ((Param2 == null)) {
+                this.Adapter.SelectCommand.Parameters[0].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[0].Value = ((string)(Param2));
+            }
+            hospitalDs.atenmedpacDataTable dataTable = new hospitalDs.atenmedpacDataTable();
+            this.Adapter.Fill(dataTable);
+            return dataTable;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, false)]
+        public virtual int FillBynMed(hospitalDs.atenmedpacDataTable dataTable, string Param2) {
+            this.Adapter.SelectCommand = this.CommandCollection[2];
+            if ((Param2 == null)) {
+                this.Adapter.SelectCommand.Parameters[0].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[0].Value = ((string)(Param2));
+            }
+            if ((this.ClearBeforeFill == true)) {
+                dataTable.Clear();
+            }
+            int returnValue = this.Adapter.Fill(dataTable);
+            return returnValue;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, false)]
+        public virtual hospitalDs.atenmedpacDataTable GetDataBynMed(string Param2) {
+            this.Adapter.SelectCommand = this.CommandCollection[2];
+            if ((Param2 == null)) {
+                this.Adapter.SelectCommand.Parameters[0].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[0].Value = ((string)(Param2));
+            }
             hospitalDs.atenmedpacDataTable dataTable = new hospitalDs.atenmedpacDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
