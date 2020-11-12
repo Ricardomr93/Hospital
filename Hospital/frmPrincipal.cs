@@ -152,7 +152,6 @@ namespace Hospital
             }
             catch (NoNullAllowedException)
             {
-                //MessageBox.Show("No se ha podido guardar, " + ex.Message, "Atencion", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
 
         }
@@ -178,6 +177,18 @@ namespace Hospital
                 {
                     pcbMed.Image = Resources.medicos;
                 }
+            }
+        }
+
+        private void btnGesPac_Click(object sender, EventArgs e)
+        {
+            frmPac fp = new frmPac();
+            try
+            {
+                fp.ShowDialog();
+            }
+            catch (NoNullAllowedException)
+            {
             }
         }
     }

@@ -549,6 +549,7 @@
             this.btnGesPac.TabIndex = 14;
             this.btnGesPac.Text = "Gestión de Pacientes";
             this.btnGesPac.UseVisualStyleBackColor = false;
+            this.btnGesPac.Click += new System.EventHandler(this.btnGesPac_Click);
             // 
             // txtADesPac
             // 
