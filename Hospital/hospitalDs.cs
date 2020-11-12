@@ -4,12 +4,22 @@
 
     partial class hospitalDs
     {
+        partial class atenmedpacDataTable
+        {
+        }
     }
 }
 
-namespace Hospital.hospitalDsTableAdapters {
-    
-    
+namespace Hospital.hospitalDsTableAdapters
+{
+    partial class atencsmedicasTableAdapter
+    {
+    }
+
+    partial class atenmedpacTableAdapter
+    {
+    }
+
     public partial class medicosTableAdapter {
     }
 }
